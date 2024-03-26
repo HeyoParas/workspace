@@ -1,0 +1,25 @@
+form{
+    background-color: rgb(32, 219, 219);
+    width:40%;
+}
+#container
+{
+    margin: 10%;
+}
+#label
+{
+    font-size: 150%;
+    border-radius: 30px;
+    align-items: center;
+    padding-left:16%;
+    background-color: rgb(134, 219, 219);
+    filter: blur();
+}
+h1{
+    text-align: left;
+    color: rgb(47, 69, 191);
+}
+#button
+{
+    text-align: center;
+}

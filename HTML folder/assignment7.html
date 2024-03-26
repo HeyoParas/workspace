@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assignment7.css" />
+  </head>
+
+  <body>
+    <form action="xyz">
+      <div id="container">
+        <br />
+        <h1>Step 1: Your details</h1>
+        <div id="label">
+          <label for="name">Name</label>
+          <input type="text" placeholder="first and last name" required />
+        </div>
+        <br>
+        <div id="label">
+          <label for="email">Email</label>
+          <input type="email" placeholder="example@domain.com" />
+        </div>
+        <br>
+        <div id="label">
+          <label for="phone_number">Phone</label>
+          <input type="tel" placeholder="Eg.+47455130000" />
+        </div>
+      
+        <h1>Step 2:Delivery Address</h1>
+        <address>
+          <div id="label">
+            <label for="address" style="vertical-align: top">Address</label>
+            <textarea name="address" id="" cols="30" rows="10"></textarea>
+          </div>
+          <br>
+        </address>
+        <div id="label">
+          <label for="postcode">Post Code</label>
+          <input type="number" />
+        </div>
+        <br>
+        <div id="label">
+          <label for="country">Country</label>
+          <input type="text" />
+        </div>
+        <h1>Step 3: Card Details</h1>
+        <div id="label">
+          <label for="cardtype" style="display: block">Card Type</label>
+          <input type="radio" name="cardtype" id="VISA" /><img
+            src="visa.png"
+            alt="visa"
+            height="28px"
+            width="28px"
+          />
+          VISA <input type="radio" name="cardtype" id="AmEx" />
+          <img src="amex.png" alt="amex" height="28px" width="28px" />AmEx
+          <input type="radio" name="cardtype" id="mastercard" />
+          <img
+            src="mastercard.png"
+            alt="mastercard"
+            height="28px"
+            width="28px"
+          />Mastercard
+        </div>
+        <br>
+        <div id="label">
+          <label for="card_number">Card Number</label>
+          <input type="number" />
+        </div>
+        <br>
+        <div id="label">
+          <label for="security">Security Code</label>
+          <input type="password" />
+        </div>
+        <br>
+        <div id="label">
+          <label for="cardtype">Name on card</label>
+          <input type="text" placeholder="exact name as on the card" />
+        </div>
+        <br>
+        <div id="button">
+          <button style="border-radius: 30px; font-size: large;">BUY IT!
+          </button>
+        </div>
+        <br>
+      </div>
+    </form>mmmmmmmmmmmmmmmm
+  </body>
+</html>

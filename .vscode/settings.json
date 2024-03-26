@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "AverageOf2HighestDigit.C": "cpp",
+        "ostream": "cpp",
+        "cstdlib": "cpp"
+    }
+}

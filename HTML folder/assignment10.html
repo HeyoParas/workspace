@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test_3</title>
+    <link rel="stylesheet" href="assignment10.css">
+</head>
+<body>
+    <h1>Application form</h1>
+    <form action="#">
+    <fieldset>
+        <legend>Personal Details</legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="fullname">Applicant's full name:</label>
+                </td>
+                <td class="pad">
+                    <select name="Card_type" id="Card_type">
+                        <option >--select--</option>
+                        <option value="visa">visa</option>
+                        <option value="mastercard">mastercard</option>
+                        <option value="rupay">rupay</option>
+                    </select> <input type="text">
+                </td>
+                <td class="pad">
+                    <label for="careof">Care Of:</label>
+                </td>
+                <td class="pad">
+                Parents<input type="radio" name="Parents" id="Parents" required>Guardian<input type="radio" name="Guardian" id="Guardian">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="fathername">Father's name:</label>
+                </td>
+                <td class="pad">
+                    <select name="gender" id="gender">
+                        <option value="0">Mr</option>
+                    </select> <input type="text">
+                </td>
+                <td class="pad">
+                    <label for="mothername">Mother's Name:</label>
+                </td>
+                <td class="pad">
+                    <select name="gender" id="gender">
+                        <option value="0">Mrs</option>
+                    </select> <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="#">Gender:</label>
+                </td>
+                    <td class="pad">
+                        Male<input type="radio" name="male" id="male" required> Female<input type="radio" name="female"id="Female"> Others<input type="radio" name="others" id="others">
+                    </td>
+                    <td class="pad">
+                        <label for="#">Date of Birth:</label>
+                    </td>
+                    <td class="pad">
+                        <input type="date">
+                    </td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>
+            Contact Details
+        </legend>
+        <table>
+        <tr>
+            <td>
+                <label for="#">Mobile Number:</label>
+            </td>
+            <td class="pad">
+                <input type="number">
+            </td>
+            <td class="pad">
+                <label for="#">Mother's Name:</label>
+            </td>
+            <td class="pad">
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="#">Address Line1:</label>
+            </td>
+            <td class="pad">
+                <input type="text">
+            </td>
+            <td class="pad">
+                <label for="#">Address line2:</label>
+            </td>
+            <td class="pad">
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="#">Address Line1:</label>
+            </td>
+            <td class="pad">
+                <input type="text">
+            </td>
+            <td class="pad">
+                <label for="#">Address line2:</label>
+            </td>
+            <td class="pad">
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="#">Pin code:</label>
+            </td>
+            <td class="pad">
+                <input type="text">
+            </td>
+            <td class="pad">
+                <label for="#">State:</label>
+            </td>
+            <td class="pad">
+                <select name="State" id="state">
+                    <option>--select--</option>
+                    <option>Haryana</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    </fieldset>
+    <fieldset>
+        <legend>
+            Qualification Details
+        </legend>
+        <table>
+            <tr>
+                    <td>
+                        <b>Sr No.</b>
+                    </td>
+                    <td class="padd">
+                        <b>Qualification</b>
+                    </td>
+                    <td class="padd">
+                        <b>Board/University</b>
+                    </td>
+                    <td class="padd">
+                        <b>Passing year</b>
+                    </td>
+                    <td class="padd">
+                        <b>Max Marks</b>
+                    </td>
+                    <td class="padd">
+                        <b>Marks Obtained</b>
+                    </td>
+                    <td class="padd"> 
+                        <b>Percentage</B>
+                    </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>1.</p>
+                </td>
+                <td class="padd">
+                    <select name="class" id="class">
+                        <option>--select--</option>
+                        <option>Graduate</option>
+                        <option>12th pass</option>
+                        <option>10th pass</option>
+                </td>
+                <td class="padd">
+                    <input type="text">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>2.</p>
+                </td>
+                <td class="padd">
+                    <select name="class" id="class">
+                        <option>--select--</option>
+                        <option>Graduate</option>
+                        <option>12th pass</option>
+                        <option>10th pass</option>
+                </td>
+                <td class="padd">
+                    <input type="text">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+                <td class="padd">
+                    <input type="number">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Language Knowledge</legend>
+    <table>
+        <tr>
+            <td>
+                <label for="#">language</label>
+            </td>
+            <td class="paddd">
+                <label for="#">Reading</label>
+            </td>
+            <td class="paddd">
+                <label for="#">writing</label>
+            </td>
+            <td class="paddd">
+                <label for="#">spoken</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="#">Hindi</label>
+            </td>
+            <td class="paddd">
+            <input type="checkbox">
+            </td>
+            <td class="paddd">
+            <input type="checkbox">
+            </td>
+            <td class="paddd">
+            <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="#">English</label>
+            </td>
+            <td class="paddd">
+            <input type="checkbox">
+            </td>
+            <td class="paddd">
+            <input type="checkbox">
+            </td>
+            <td class="paddd">
+            <input type="checkbox">
+            </td>
+        </tr>
+    </table>
+    </fieldset>
+    <fieldset>
+        <legend>
+            Identification Details
+        </legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="#">Adhaar Card Number</label>
+                </td>
+                <td class="padddd">
+                    <input type="number">
+                </td>
+                <td class="padddd">
+                    PAN Card Number
+                </td>
+                <td class="padddd">
+                    <input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Upload Photo
+                </td>
+                <td>
+                    <input type="file">
+                </td>
+                <td>
+                    Upload Signature
+                </td>
+                <td>
+                    <input type="file">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <div id="button">
+    <button>Submit</button> <button>Back</button>
+    </div>
+</form>
+</body>
+</html>

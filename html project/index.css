@@ -1,0 +1,200 @@
+body
+{
+margin: 0px;
+padding: 0px;
+}
+.bar1{
+    width: 100%;
+    height: 150px;
+    background-color: yellow;
+    display: flex;
+    border-radius: 7px;
+}
+img
+{
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+}
+
+.bar2
+{
+    background-color: yellow;
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    border-radius: 10px;
+}
+.navbar
+{
+    background-color: yellow;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+}
+ul
+{
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+a
+{
+color: white;
+text-decoration: none;
+padding-top: 10px;
+}
+.buttons
+{
+    width: 21%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    border-radius: 10px;
+    background-color: yellow;
+}
+button:hover
+{
+    font-size: medium;
+    transition: all 0.4s ease-in-out;
+}
+.maimtimg
+{
+    width: 100%;
+    height: 500px;
+    background-image: url("maimt.png");
+    background-size: cover;
+}
+#maimt
+{
+   background-color:yellow;
+   width: 100%;
+   height: 30px;
+   text-align: center;
+   font-weight: bolder;
+   font-size: 26px;
+   color:red;
+}
+.content
+{
+    width: 60%;
+    margin-left: 20%;
+    height: 360px;
+    display: flex;
+}
+.library
+{
+    width: 100%;
+    height: 150px;
+    background-image: url("library.png");
+    background-size: cover;
+    margin: 20px 20px;
+}
+.logo
+{
+    width: 100%;
+    height: 205px;
+    background-image: url("maimtlogo.png");
+    background-size: cover;
+    margin-top:160px;
+}
+.bca
+{
+    width: 60%;
+    height: 30px;
+    background-color: #0d6efd;
+    text-align: center;
+    padding-top: 7px;
+    margin-left: 20%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+.bba
+{
+    width: 60%;
+    height: 30px;
+    background-color: #0d6efd;
+    text-align: center;
+    padding-top: 7px; 
+    margin-left: 20%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.mca
+{
+    width: 60%;
+    height: 30px;
+    background-color: #0d6efd;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-bottom: 10px;
+}
+.mba
+{
+    width: 60%;
+    height: 30px;
+    background-color: #0d6efd;
+    text-align: center;
+    padding-top: 7px;
+    margin-left: 20%;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+.footer
+{
+    width: 100%;
+    height: 150px;
+    background-color: yellow;
+}
+h1,h2
+{
+    color: rgb(230, 25, 25);
+}
+a:hover{
+    text-decoration:  rgb(214, 19, 19) underline;
+}
+.f1
+{
+    width: 90%;
+    height: 130px;
+    margin-left: 5%;
+    display: flex;
+}
+.box1,.box3
+{
+    width: 33%;
+    height: 130px;
+    margin-right: 1%;
+}
+.box2
+{
+    width: 20%;
+    height: 130px;
+    margin-right: 1%;
+}
+#edit
+{
+margin: 0px;
+padding: 0px;
+}
+#map
+{
+    width: 150px;
+    height: 130px;
+    margin: 0px;
+    padding: 0px;
+}
+#view
+{
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    z-index: 1;
+}

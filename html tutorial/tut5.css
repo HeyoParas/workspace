@@ -1,0 +1,29 @@
+.navbar
+{
+    background-color: pink;
+}
+.option
+{
+    list-style: none;
+    display:flex;
+    justify-content: space-evenly;
+}
+a{
+    text-decoration: none;
+}
+.outer
+{
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner
+{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    
+}

@@ -1,0 +1,15 @@
+h1{
+    color: rgb(38, 74, 146);
+    background-color: rgb(145, 182, 246);
+}
+table,th,td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+.row{
+    background-color:rgb(216, 215, 215);
+}
+
+body:hover{
+    cursor:grab;
+}

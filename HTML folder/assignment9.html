@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test2</title>
+        <style>
+ 	        tr, td 
+            {
+		     border:1px solid white;
+		     border-collapse:collapse;
+               border-radius:10px;
+		     padding:20px;
+	          background-color:hsla(73, 48%, 73%, 0.418);
+            }
+        </style>
+    </head>
+   <body>
+        <form style="padding:30px; width: 400px;border: 1px solid black;">
+            <fieldset style="width:90%;background-color:hsl(73, 76%, 55%)">
+           <table>
+             <tr>
+	<th style="text-align:left;padding:2%">Step1: Your details</th>
+          </tr>
+               <tr>
+                  <td>
+	               <label for="fname">Name</label>
+  	               <input id="fname" name="fname" type="text" placeholder="First and last name">
+                  </td>
+               </tr>
+          <tr>
+               <td>
+	               <label for="email">Email</label>
+  	               <input id="email" name="email" type="email" placeholder="example@domain.com">
+               </td>
+          </tr>
+          <tr>
+               <td>
+	               <label for="phone">phone</label>
+  	               <input id="phone" name="phone" type="tel" placeholder="Eg.+447500000000">
+               </td>
+          </tr>
+
+             <tr>
+	<th style="text-align:left;padding:2%">Step2: Delivery Address</th>
+             </tr>
+             <tr>
+                  <td>
+	    <label for="ta" style="vertical-align:top;">Address</label>
+	    <textarea id="ta" style="width:150px;height:40px;" ></textarea>
+                  </td>
+             </tr>
+             <tr>
+                  <td>
+	    <label for="pcode">Postcode</label>
+  	   <input id="pcode" name="postcode" type="text">
+                  </td>
+             </tr>
+             <tr>
+                  <td>
+	    <label for="country">Country</label>
+  	   <input id="country" name="country" type="country">
+                  </td>
+             </tr>
+
+             <tr>
+	<th style="text-align:left;padding:2%">Step3: Card details</th>
+             </tr>
+             <tr>
+                  <td>
+	   <label>Card type</label>
+                     </br>
+	   <input id="vs" type="radio">
+	   <img for="vs" src="visa.png" style="width:20px;height:20px;">visa</img>
+	   <input id="am" type="radio">
+	   <img for="vs" src="amex.png" style="width:20px;height:20px;">AmEx</img>
+                     <input id="ma" type="radio">
+	   <img for="vs" src="mastercard.png" style="width:20px;height:12px;">Mastercode</img>
+                  </td>
+             </tr>
+             <tr>
+                  <td>
+	    <label for="card">Card number</label>
+  	   <input id="card" name="cardnumber" type="text">
+                  </td>
+             </tr>
+             <tr>
+                  <td>
+	    <label for="sc">Security code</label>
+  	   <input id="sc" name="security code" type="text">
+                  </td>
+             </tr>
+             <tr>
+                  <td>
+	    <label for="c">Name on card</label>
+  	   <input id="c" name="name on card" type="text" placeholder="Exact name on the card">
+                  </td>
+             </tr>
+             <tr>
+                  <th style="text-align:center">
+	    <input type="submit" value="BUY IT!" style="background-color: black;color:white;border-radius:45%;width:35%;margin:5px;padding:6px;">
+                  </th>
+             </tr>
+          </table>
+        </fieldset>
+      </form>
+   </body>
+</html>

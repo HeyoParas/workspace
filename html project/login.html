@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-In</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      .container {
+        width: 20%;
+        height: 260px;
+        background-color: yellow;
+        border-radius: 10px;
+      }
+      div {
+        margin-left: 40%;
+      }
+      h2 {
+        text-align: center;
+        padding-top: 20px;
+      }
+      h5 {
+        margin: 0px;
+        padding: 0px;
+        margin-left: 10px;
+      }
+      .input {
+        margin-left: 10px;
+        width: 200px;
+      }
+      button {
+        margin-top: 30px;
+        width: 90%;
+        margin-left: 5%;
+        background-color: rgb(65, 130, 251);
+        border-radius: 10px;
+      }
+      button:hover {
+        font-size: medium;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login to your account</h2>
+      <h5>Email</h5>
+      <input
+        type="text"
+        class="input"
+        placeholder="enter your email"
+        required
+      />
+      <br /><br />
+      <h5>Password</h5>
+      <input
+        type="password"
+        class="input"
+        placeholder="enter your password"
+        required
+      />
+      <button>log in</button>
+      <p style="font-size: small; text-align: center">
+        Don't have any account?<a href="signin.html">sign up</a>
+      </p>
+    </div>
+  </body>
+</html>

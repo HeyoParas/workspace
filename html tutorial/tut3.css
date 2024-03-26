@@ -1,0 +1,21 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    background-image: url("img.jpg");
+    background-size: cover;
+    position: relative;
+    top:100px;
+    right: 10px;
+}
+#div2
+{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    background-image: url("img.jpg");
+    background-size: cover;
+   
+position: sticky;
+left: 0px;
+}

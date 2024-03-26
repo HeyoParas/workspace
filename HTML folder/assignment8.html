@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment8</title>
+    <style>
+        #content
+        {text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h1>STUDENT REGISTRATION FORM FOR STUDENTS</h1>
+    <form method="post">
+        <fieldset>
+            <legend>Enter your details</legend>
+            <table id="content">
+                    <tr>
+                        <td>
+                            <label for="fname" value="fname">First Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="fname" name="fname">
+                        </td>
+                    </tr>    
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="lname" value="lname">Last Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="lname" name="lname">
+                        </td>
+                    </tr>    
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="email" value="email">Email:</label>
+                        </td>
+                        <td>
+                            <input type="email" id="email" name="email" placeholder="a@gmail.com">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="password" value="password">Password:</label>
+                        </td>
+                        <td>
+                            <input type="password" id="password" name="password" placeholder="">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="dob" value="dob">Date of Birth:</label>
+                        </td>
+                        <td>
+                            <input type="date" id="date" name="date">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="contact_no" value="contact_no">Contact Number:</label>
+                        </td>
+                        <td>
+                            <input type="tel" id="telephone" name="telephone" placeholder="12345-67890" pattern="[0-9]{5}-[0-9]{5}">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="Stud_wg" value="stud_wg">Student Weight:</label>
+                        </td>
+                        <td>
+                            <input type="number" id="number" name="number" placeholder="40" step="3" min="30" max="100">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="gender" value="gender">Gender:</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="gender" name="gender" value="Male">Male
+                            <input type="radio" id="gender" name="gender" value="Female">Female
+                            <input type="radio" id="gender" name="gender" value="Other">Other
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="fav_color" value="fav_color">Favourite color:</label>
+                        </td>
+                        <td>
+                            <input type="color" id="fav_color" name="fav_color">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="hobbies" value="hobbies">Hobbies:</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="hobbies" name="hobbies" value="Singing" checked>Singing
+                            <br>
+                            <input type="checkbox" id="hobbies" name="hobbies" value="Dancing">Dancing
+                            <br>
+                            <input type="checkbox" id="hobbies" name="hobbies" value="Sports">Sports
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="pincode" value="pincode">Pincode:</label>
+                        </td>
+                        <td>
+                            <input type="number" id="pincode" name="pincode" placeholder="Enter Pincode">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="files" value="files">Upload Resume:</label>
+                        </td>
+                        <td>
+                            <input type="file" id="myfile" name="myfile">
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <label for="files" value="files">Upload Skill Certificate:</label>
+                        </td>
+                        <td>
+                            <input type="file" id="myfile" name="myfile" multiple> 
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Register">
+                            <input type="submit" value="Submit Data" formnovalidate="formnovalidate">
+                            <input type="reset" value="Reset Data">
+
+                        </td>
+                    </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

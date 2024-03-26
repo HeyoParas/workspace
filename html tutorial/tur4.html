@@ -1,0 +1,185 @@
+<!Doctype html>
+<html>
+    <head>
+    <style> 
+        i{font-size:50px;
+         margin-left: 20px;}
+        .a:link{
+                background-color:  orange;  
+                border-style:solid; 
+                border-color: red;
+                border-radius: 25px;
+                padding: 14px 25px;
+                color:white;
+               }
+        .a:hover{background-color: brown;}
+        body{background-color: #ffc0c0;}
+        .abc{list-style-type: circle;}
+        .abcd{list-style-type: number;}
+        .ab{list-style-type:lower-alpha;}   
+        table{width:100%;}
+        
+        th,tr,td{height:25px;width:30px;}
+        table,tr,td,th{border:2px solid black;
+                       border-collapse: collapse;
+                       font-size: 10px ;}
+        th{ vertical-align: bottom;
+        color: aliceblue;}
+        tr,td{vertical-align: top;}
+        tr:nth-child(1){background-color: green;}
+
+        .ram{background-color: aqua;}
+
+        .last{background-color: red;
+              text-align: center;
+              color: aliceblue;}
+
+        .circle{height:200px;
+                width: 200px;
+                background-color: rgb(80, 245, 71);
+                border-radius: 50%;
+                margin:20px 20px;
+                }
+                
+        .rec{width: 300px;
+             height:20px;
+             background-color: grey;
+             color: aliceblue;
+             text-align: center;
+             font-weight: bold;
+             margin-right:150px;
+             } 
+
+        .square{margin:50px 100px 50px 100px;
+                background-color:brown;
+                padding:160px ;} 
+
+        .list{background-color: black;
+              color: white;
+              margin-left:150px;
+              height: 375px;
+              overflow: scroll;}  
+              
+        #one{height:100px;
+             text-align: center;
+             width:100px;
+             background-color: green;}
+
+        #two{height:100px;text-align: center;
+             width:100px; 
+             background-color: yellow;}
+
+        #three{height:100px;
+              width:100px;  text-align: center;
+             background-color: powderblue;}
+
+        #four{height:100px;width:100px;text-align: center;
+             background-color: red;}
+
+        #five{height:100px;width:100px;text-align: center;
+             background-color: orange;}
+
+        .mix{display:flex;}
+        
+        .bottom{display:flex;}
+    </style>
+    <link rel="stylesheet" type="text/CSS" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    </head>
+    <body>
+        <i class="fa-regular fa-address-book"></i>
+        <i class="fa-brands fa-quora"></i>
+        <a class="a" href="https://www.w3schools.com/css/default.asp" target="blank">Click me</a>
+        <ul>
+            <li  class="abc"><a href="#">NAME</a></li>
+            <ol>
+                <li value="45"><a href="#">RAM</a></li>
+            </ol>
+            <li  class="ab"><a href="#">CLASS</a></li>
+            <ol>
+                <li value="-23"><a href="#">Bca</a></li>
+            </ol>
+            <li  class="abc"><a href="#">ROLLNO</a></li>
+            <ol class="abcd">
+                <li><a href="#">12345</a></li>
+            </ol>
+            <li><a href="#">PERCENTAGE</a></li>
+            <ol class="abcd">
+                <li><a href="#">76%</a></li>
+            </ol>
+        </ul>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Roll no</th>
+                <th>Subject</th>
+                <th>Semester</th>
+                <th>College</th>
+                <th>Session</th>
+            </tr>
+            <tr>
+                <td class="ram" rowspan="2">Ram</td>
+                <td>Bca</td>
+                <td>1234</td>
+                <td>English</td>
+                <td>3rd</td>
+                <td>MAIMT</td>
+                <td>2017-2018</td>
+            </tr>
+            <tr>
+                <td>Bca</td>
+                <td>1234</td>
+                <td>English</td>
+                <td>3rd</td>
+                <td>MAIMT</td>
+                <td>2017-2018</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: bottom;">Ram</td>
+                <td>Bca</td>
+                <td>1234</td>
+                <td>English</td>
+                <td>3rd</td>
+                <td>MAIMT</td>
+                <td>2017-2018</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="last">Ram</td>
+                <td>1234</td>
+                <td>English</td>
+                <td>3rd</td>
+                <td>MAIMT</td>
+                <td>2017-2018</td>
+            </tr>
+        </table>
+        <center><div class="circle"></div></center>
+        <div class="mix">
+        <div class="rec">HELLO</div><br>
+        <div class="square"></div>
+        <div class="list">
+            <ul style="list-style-type:none;">
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+                <li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li><li>its a list</li>
+             </ul>
+        </div>
+    </div>
+    <div class="bottom">
+        <div id="one">1</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+        <div id="four">4</div>
+        <div id="five">5</div>
+    </div>
+    <h2>its a list with 100 item with 400px height</h2>
+    </body>
+</html>
