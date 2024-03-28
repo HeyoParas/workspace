@@ -1,6 +1,6 @@
 const fs=require("fs");
 const path=require('path');
-fs.readdir("./javascript/assignment3",(err,files)=>
+fs.readdir("./javascript/assignment3",function(err,file)
 {
     if(err)
     {
@@ -8,19 +8,20 @@ fs.readdir("./javascript/assignment3",(err,files)=>
     }
     else
     {
-       console.log("ok");
+       console.log("ok \n total number of files in the directory:",file.length,"\n");
         
-for(let i=0;i<files.length;i++)
+for(let i=0;i<file.length;i++)
 {
-    let fileName = files[i];
+    let fileName = file[i];
     let filePath = path.join('./javascript/assignment3', fileName);
-    fs.readFile(filePath, 'utf8', (err, data) => {
+    fs.readFile(filePath,(err, data) =>
+    {
         if (err) 
         {
             console.log('error');
             return;
         }
-        fs.appendFile("./javascript/assignment3/mergecontent.txt", data, (err) => {
+    fs.appendFile("./javascript/assignment3/mergecontent.txt", data, (err) => {
             if (err) 
             {
                 console.log('Error');
@@ -29,7 +30,7 @@ for(let i=0;i<files.length;i++)
             {
                 console.log(fileName);
             }
-        });
+    });
     });
 }
     }
