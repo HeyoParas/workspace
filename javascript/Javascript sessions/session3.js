@@ -1,3 +1,3 @@
 const fs=require('fs');
-const filedata=fs.readFileSync('file.txt','utf-8');
+const filedata=fs.readFileSync('./javascript/javascript sessions/hello.txt','utf-8');
 console.log(filedata);

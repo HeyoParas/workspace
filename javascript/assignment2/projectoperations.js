@@ -29,13 +29,13 @@ function del(taskid)
 }
 function display()
 {
+ console.log("total number of tasks :",tasks.length,"\n");
  console.log("Tasks are:");
  for(let i=0;i<tasks.length;i++)
  {
     console.log("Task id:",i);
     console.log("Tasks details",tasks[i]);
     console.log("\n");
-    console.log("total number of tasks :",tasks.length);
  }
 }
 module.exports={
