@@ -6,7 +6,7 @@ int main ()
     printf("Input in number of terms:");
     scanf("%d",&n);
     o=n;
-    while(o!=0)
+    while(o)
     {
         res=num*pow(10,power)+res;
         printf("%d ",res);
