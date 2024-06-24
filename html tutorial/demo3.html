@@ -1,149 +1,981 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment 6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body
-        {
-            background-color: lightblue;
-        }
-        p{
-            padding: 0px;
-            margin: 0px;
-        }
-        a{
-            text-decoration: none;
-            color: white;
-            padding-top: 15px;
-        }
-        a:hover
-        {
-            background-color: pink;
-        }
-        .box{
-            width: 75px;
-            height: 50px;
-            background-color: rgb(252, 74, 10);
-            text-align: center;
-            margin-top: 20px;
-            margin-right:50px;
-        }
-        #box
-        {
-            margin-left: 30%;
-        }
-        .header
-        {
-        width: 100%;
-        height: 110px; 
-        display: flex;     
-        }
+        body {
+    padding: 0;
+    margin: 0;
+}
 
-        .container
-        {
-            width: 100%;
-            height:130px;
-            background-color: aqua;
-            border:2px dotted;
+.header {
+    display: flex;
+    background-color: rgb(44, 40, 40);
+    color: white;
+    height: auto;
+    padding: 10px 10px;
+    font-size: 10px;
+}
 
-        }
-        .container2
-        {
-            width: 100%;
-            height: 255px;
-            background-color: orange;
-            border: 6px orangered double;
-        }
-        .box1
-        {
-            width: 100px;
-            height: 100px;
-            border: 3px solid blue;
-            background-image: url("img.jpg");
-            background-size: cover;
-            margin-right: 5px;
-        }
-        .box2
-        {
-            width: 100px;
-            height: 100px;
-            border: 3px solid blue;
-            background-image: url("img.jpg");
-            background-size: cover;
-            margin-right: 5px;
-        }
-        .boxx,.boxxx
-        {
-            width: 100px;
-            height: 100px;
-            background-image: url("img.jpg");
-            background-size: cover;
-            border: 5px solid blue;
-            display: block;
-        }
-        .footer
-        {
-            width: 100%;
-            height: 300px;
-            display: flex;
-        }
-        #box1
-        {
-            width: 25%;
-            height: 200px;
-            background-image: url("img.jpg");
-            background-size: cover;
-        }
-        #box2
-        {
-            width: 30%;
-            height: 250px;
-            background-image: url("img.jpg");
-            background-size: cover;
-            border: 4px dashed pink;
-            position: absolute;
-            right: 0px;
+.header i {
+    margin-left: 20px;
+}
 
-        }
-        #box3
-        {
-            width: 60%;
-            height: 190px;
-            background-image: url("img.jpg");
-            background-size: cover;
-            margin-top: 25px ;
-            margin-left: 25px;
+#container1 {
+    position: relative;
+    left: 5%;
+}
 
-        }
+#container2 a {
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+}
+
+#container2 {
+    position: absolute;
+    right: 10%;
+}
+
+.navbar {
+    height: 60px;
+    display: flex;
+    position: relative;
+}
+
+
+#heading {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    color: #F48937;
+    padding: 10px;
+    position: relative;
+    left: 50px;
+    text-align: center;
+}
+
+#nav {
+    display: flex;
+    position: relative;
+    left: 20%;
+    align-items: center;
+}
+
+#nav i {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#box {
+    height: 50px;
+    width: auto;
+    background-color: #F48937;
+    color: white;
+    margin: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+}
+
+.search-bar {
+    height: 65px;
+    background-color: #363C48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#option select {
+    height: 43px;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#text {
+    height: 42px;
+    width: 600px;
+    color: black;
+    background-color: white;
+}
+
+#text p {
+    margin-left: 20px;
+}
+
+#search {
+    height: 43px;
+    width: 300px;
+    background-color: #F48937;
+    color: white;
+    text-align: center;
+}
+
+.picture1 {
+    width: 100%;
+    height: 300px;
+    border: 2px solid black;
+    background-image: url('download.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background-color: rgba(3, 5, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content {
+    color: white;
+    text-align: center;
+}
+
+#text-content {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', ;
+    font-size: xxx-large;
+}
+
+#text-content span {
+    color: #F48937;
+}
+
+#text-content {
+    margin-bottom: 10px;
+}
+
+.latest-ads {
+    padding-top: 10px;
+    padding-bottom: 40px;
+    background-color: #dad5d8;
+    text-align: center;
+}
+
+#ads-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#images {
+    height: auto;
+    width: 250px;
+    border: 1px solid rgb(168, 164, 164);
+    background-color: #FFFFFF;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#images p {
+    margin-left: 10px;
+}
+
+#images img {
+    width: 250px;
+    height: 250px;
+}
+
+#ad-head {
+    font-size: xxx-large;
+    color: #F48937;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', ;
+    margin-top: 15px;
+    margin-bottom: -5px;
+    font-weight: bold;
+}
+
+.text1 {
+    color: grey;
+    font-size: small;
+    margin-bottom: -11px;
+}
+
+.text2 {
+    color: rgb(74, 71, 71);
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+.text3 {
+    color: rgb(74, 69, 69);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.stars i {
+    color: #F48937;
+    font-size: 12px;
+}
+
+.span1 {
+    color: grey;
+    margin-right: 20px;
+}
+
+.span2 {
+    color: #F48937;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+}
+
+.stars {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.eye-view {
+    color: grey;
+    font-size: 15px;
+}
+
+.eye-view i {
+    margin-left: 10px;
+}
+
+.ad-categories {
+    height: auto;
+    text-align: center;
+}
+
+.main-div {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: auto;
+}
+
+.div-image img {
+    height: 210px;
+    width: 250px;
+}
+
+.div-image {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: -20px;
+    border: 2px solid white;
+}
+
+.ad-name {
+    margin-top: -3px;
+    font-size: 20px;
+}
+
+.points {
+    font-size: 15px;
+    margin-top: -15px;
+    color: grey;
+}
+
+.content {
+    width: 100%;
+    height: 300px;
+    background-image: url(city.jpg);
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divs {
+    height: auto;
+    width: 500px;
+    display: flex;
+    position: relative;
+    border: none;
+    margin-right: 15px;
+    color: white;
+}
+
+.divs i {
+    font-size: 35px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.divs h1 {
+    margin-top: 17px;
+    margin-bottom: 5px;
+}
+
+.clients {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#client-text {
+    height: auto;
+    width: 750px;
+    text-align: center;
+    word-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#image1 {
+    border-radius: 50%;
+    height: 100px;
+}
+
+#image2 {
+    border-radius: 50%;
+    height: 50px;
+}
+
+#image3 {
+    border-radius: 50%;
+    height: 60px;
+}
+
+#client-text h1 {
+    color: #F48937;
+    font-weight: bold;
+    word-spacing: 5px;
+
+}
+
+.app-link {
+    text-align: center;
+    border: 2px solid black;
+    background-image: url(work.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.app-link h1 {
+    color: #F48937;
+    word-spacing: 2px;
+}
+
+.app-link p {
+    color: white;
+    word-spacing: 2px;
+}
+
+.get-link {
+    height: auto;
+    width: 380px;
+    background-color: rgb(36, 35, 35);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#num-box {
+    height: 30px;
+    width: 40px;
+    background-color: white;
+}
+
+.phone-code {
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.phone-number {
+    height: 30px;
+    width: 260px;
+}
+
+.app-link-btn {
+    height: 33px;
+    width: 265px;
+    position: relative;
+    left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #F48937;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+}
+
+.app-link-btn:hover {
+    color: #F48937;
+    background-color: white;
+    border: 3px solid #F48937;
+    border-radius: 3px;
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.car-image img {
+    height: 263px;
+    width: 480px;
+}
+
+.car-text {
+    border: 2px solid grey;
+    height: 260px;
+    width: 480px;
+    margin-left: 30px;
+}
+
+.car-text button:hover {
+    background-color: #F48937;
+    color: white;
+}
+
+.car-text h2 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    word-spacing: 5px;
+    margin-left: 20px;
+}
+
+#p1 {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: -10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#p2 {
+    margin-left: 20px;
+    color: grey;
+    word-spacing: 5px;
+}
+
+.car-text button {
+    margin-left: 20px;
+    height: 40px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #F48937;
+    background-color: white;
+    border: 2px solid #F48937;
+}
+
+.news h1 {
+    text-align: center;
+    color: #F48937;
+    word-spacing: 5px;
+}
+
+#ptext {
+    text-align: center;
+    margin-top: -10px;
+    word-spacing: 5px;
+}
+
+.conculsion {
+    display: flex;
+    justify-content: center;
+    background-color: #303030;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+#con-div1 {
+    height: auto;
+    width: 300px;
+    margin-right: 20px;
+    padding-right: 10px;
+}
+
+#con-div2 {
+    height: auto;
+    width: 300px;
+    margin-right: 10px;
+}
+
+#con-div2 img:hover {
+    opacity: .8;
+}
+
+#con-div3 {
+    height: auto;
+    width: 300px;
+}
+
+#con-div3 button {
+    height: 37px;
+    width: 83px;
+    margin-top: 15px;
+    margin-bottom: -6px;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: large;
+    background-color: #1F1F1F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#con-div3 button:hover {
+    color: white;
+    background-color: #363C48;
+}
+
+#con-div4 {
+    height: auto;
+    width: 200px;
+    margin-left: 10px;
+}
+
+.cons-image img {
+    height: 75px;
+    margin-right: 7px;
+    margin-top: 15px;
+    margin-bottom: -7px;
+}
+
+.cons p:first-of-type {
+    font-size: medium;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.empty-div {
+    border: 1.5px solid orangered;
+    width: 80px;
+    margin-top: -10px;
+}
+
+#con-div4 a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#con-div4 a:hover {
+    color: #C8712E;
+}
+
+.footer {
+    display: flex;
+    background-color: rgb(44, 40, 40);
+    color: white;
+    height: auto;
+    font-size: 10px;
+}
+
+.footer i {
+    position: relative;
+    top: 10px;
+    margin-right: 15px;
+}
     </style>
 </head>
+
 <body>
     <div class="header">
-      <a href="#" class="box" id="box"> home</a><a href="#" class="box">About us</a><a href="#" class="box">Our client</a><a href="#" class="box">Contact us</a>
+        <div id="container1">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call us +989898989</span>
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Support</span>
+        </div>
+        <div id="container2">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-solid fa-camera-retro"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-twitch"></i></a>
+            <a href="#"><i class="fa-brands fa-slack"></i></a>
+            <a href="#"><i class="fa-solid fa-book"></i></a>
+        </div>
     </div>
-    <div class="container">
-        <p style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam est repellat voluptatum facilis expedita,ajfhhfsfjhufsiu ikufiuks jsbfksfb kjbafksb  kbfsf kbfs 
-        </p>
-        <div style="display: flex;">
-        <div class="box1"></div>
-        <div class="box2"></div>
+    <div class="navbar">
+        <div id="heading">
+            <span>Grabmedis</span>
+        </div>
+        <div id="nav">
+            <i class="fa-solid fa-house"></i>
+            <a href="#">HOME</a>
+            <i class="fa-solid fa-table-list"></i>
+            <a href="#">LISTING</a>
+            <i class="fa-solid fa-tags"></i>
+            <a href="#">CATEGORES</a>
+            <i class="fa-solid fa-chevron-down" id="down-arrow" style="margin-left: -15px; margin-right: 15px;"></i>
+            <i class="fa-solid fa-user"></i>
+            <a href="#">DASHBOARD</a>
+            <i class="fa-solid fa-paper-plane"></i>
+            <a href="#">PAGES</a>
+            <i class="fa-solid fa-chevron-down" id="down-arrow" style="margin-left: -15px; margin-right: 15px;"></i>
+            <a href="#">CONTECT</a>
+            <div id="box">
+                <p>+ POST FREE ADD</p>
+            </div>
+        </div>
     </div>
+    <div class="search-bar">
+        <div id="option">
+            <select>
+                <option value="select" selected>Select An Option</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div id="text">
+            <p>WHAT ARE YOUR LOCKING FOR </p>
+        </div>
+        <div id="search">
+            <p>SEARCH</p>
+        </div>
     </div>
-    <br><br>
-    <div class="container2">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam tenetur earum debitis id officiis doloremque modi, et obcaecati architecto in nobis ex? Officia cupiditate eos cumque </p>
-        <div class="boxx"></div>
-        <div class="boxxx"></div>
-        <p>jabfsbf uijbofihsd ujohofhse bolih fso ubolsihf lkbosif oubols fkjnoafi jbosf oiujbosif </p>
+
+    <div class="picture1">
+        <div id="content">
+            <p id="text-content">Over 95,00,000 <span>Classified </span>Ads Listing</p>
+            <p>Search from largest classified marketplace & Post unlimited classified free!</p>
+        </div>
     </div>
-    <br>
+    <div class="latest-ads">
+        <div>
+            <p id="ad-head">Latest Ads</p]>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, nulla! amet consectetur adipisicing elit.
+            </p>
+        </div>
+        <div id="ads-images">
+            <div id="images">
+                <img src="xp.jpg" alt="">
+                <p class="text1">Mobiles</p>
+                <p class="text2">Xperia Z5 Primeum</p>
+                <p class="text3"><i class="fa-solid fa-location-dot"></i>
+                    <span>Houston Street London</span>
+                </p>
+                <p class="stars"><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="span1">(2)</span>
+                    <span class="span2">$280</span>
+                </p>
+                <hr>
+                <p class="eye-view"><i class="fa-regular fa-eye"></i>
+                    <span>340 views</span>
+                    <i class="fa-regular fa-clock"></i>
+                    <span>40 minuttes ago</span>
+                </p>
+            </div>
+            <div id="images">
+                <img src="house.jpg" alt="">
+                <p class="text1">Real Estate</p>
+                <p class="text2">House For Sale</p>
+                <p class="text3"><i class="fa-solid fa-location-dot"></i>
+                    <span>Houston Street London</span>
+                </p>
+                <p class="stars"><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="span1">(2)</span>
+                    <span class="span2">$43,800</span>
+                </p>
+                <hr>
+                <p class="eye-view"><i class="fa-regular fa-eye"></i>
+                    <span>340 views</span>
+                    <i class="fa-regular fa-clock"></i>
+                    <span>40 minuttes ago</span>
+                </p>
+            </div>
+            <div id="images">
+                <img src="watch.jpg" alt="">
+                <p class="text1">Sports & Equipments</p>
+                <p class="text2">Prometheus Sailfish Watch</p>
+                <p class="text3"><i class="fa-solid fa-location-dot"></i>
+                    <span>Houston Street London</span>
+                </p>
+                <p class="stars"><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="span1">(2)</span>
+                    <span class="span2">$280</span>
+                </p>
+                <hr>
+                <p class="eye-view"><i class="fa-regular fa-eye"></i>
+                    <span>340 views</span>
+                    <i class="fa-regular fa-clock"></i>
+                    <span>40 minuttes ago</span>
+                </p>
+            </div>
+            <div id="images">
+                <img src="car.jpg" alt="">
+                <p class="text1">Vechiles</p>
+                <p class="text2">Cadillac ats black</p>
+                <p class="text3"><i class="fa-solid fa-location-dot"></i>
+                    <span>Houston Street London</span>
+                </p>
+                <p class="stars"><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="span1">(2)</span>
+                    <span class="span2">$43,800</span>
+                </p>
+                <hr>
+                <p class="eye-view"><i class="fa-regular fa-eye"></i>
+                    <span>340 views</span>
+                    <i class="fa-regular fa-clock"></i>
+                    <span>40 minuttes ago</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="ad-categories">
+        <div>
+            <p id="ad-head">Ads Categories</p]>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, nulla! amet consectetur adipisicing elit.
+            </p>
+        </div>
+        <div class="main-div">
+            <div class="div-image">
+                <div><img src="service.jpg" alt=""></div>
+                <div class="logo"><img src="tool.png" alt="">
+                    <p class="ad-name">Service</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="jobs.jpg" alt=""></div>
+                <div class="logo"><img src="lappy1.jpg" alt="">
+                    <p class="ad-name">Jobs</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="house.jpg" alt=""></div>
+                <div class="logo"><img src="tool.png" alt="">
+                    <p class="ad-name">Real Estate</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="fashion.jpg" alt=""></div>
+                <div class="logo"><img src="lappy1.jpg" alt="">
+                    <p class="ad-name">Service</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-div">
+            <div class="div-image">
+                <div><img src="bike.jpg" alt=""></div>
+                <div class="logo"><img src="lappy1.jpg" alt="">
+                    <p class="ad-name">Bike</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="cars.jpg" alt=""></div>
+                <div class="logo"><img src="tool.png" alt="">
+                    <p class="ad-name">Cars</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="mobile.jpg" alt=""></div>
+                <div class="logo"><img src="lappy1.jpg" alt="">
+                    <p class="ad-name">Mobile</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="furniture.jpg" alt=""></div>
+                <div class="logo"><img src="tool.png" alt="">
+                    <p class="ad-name">Furniture</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-div">
+            <div class="div-image">
+                <div><img src="pet.jpg" alt=""></div>
+                <div class="logo"><img src="tool.png" alt="">
+                    <p class="ad-name">Pets</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="electronics.jpg" alt=""></div>
+                <div class="logo"><img src="lappy1.jpg" alt="">
+                    <p class="ad-name">Electronics</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="matrimoney.jpg" alt=""></div>
+                <div class="logo"><img src="tool.png" alt="">
+                    <p class="ad-name">Matrimony</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+            <div class="div-image">
+                <div><img src="restaurents.jpg" alt=""></div>
+                <div class="logo"><img src="lappy1.jpg" alt="">
+                    <p class="ad-name">Restaurents</p>
+                    <p class="points">4,345 Ads</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="divs" style="background-color: #C82D55;">
+            <div><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div>
+                <h1>Searching For Something?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis optio quisquam soluta nemo
+                    nesciunt est ut eaque autem tempore.</p>
+            </div>
+        </div>
+        <div class="divs" style="background-color: #C8712E;">
+            <div><i class="fa-solid fa-tags"></i></div>
+            <div>
+                <h1>Want To Sell Something?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis optio quisquam soluta nemo
+                    nesciunt est ut eaque autem tempore.</p>
+            </div>
+        </div>
+    </div>
+    <div class="clients">
+        <div id="client-text">
+            <h1>Our Happy Clients</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quas harum sit. Neque, nam vitae?
+                Quaerat in optio non quo deleniti perspiciatis officia a saepe? Necessitatibus, fuga obcaecati. Deleniti
+                sit deserunt magni dolores architecto enim minima accusamus omnis corrupti vero. Similique esse sapiente
+                nesciunt magni quo</p>
+            <h3>-ABC(Service Man)</h3>
+            <img src="clients.jpg" alt="" id="image1">
+            <img src="clients.jpg" alt="" id="image2">
+            <img src="clients.jpg" alt="" id="image3">
+
+        </div>
+    </div>
+    <div class="app-link">
+        <h1>Get The App Link</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi animi itaque blanditiis incidunt!
+            Voluptatibus, voluptas?</p>
+        <div class="get-link">
+            <input type="text" class="phone-code" value="+91" readonly>
+            <input type="text" class="phone-number"><br>
+            <button class="app-link-btn">GET APP LINK</button>
+        </div>
+    </div>
+    <div class="news">
+        <h1>Latest News</h1>
+        <p id="ptext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur id dolorem laudantium quas,
+            voluptatum
+            nobis.</p>
+        <div class="image-box">
+            <div class="car-image">
+                <img src="newscar.jpg" alt="">
+            </div>
+            <div class="car-text">
+                <h2>07 June,2024</h2>
+                <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, nisi alias excepturi iure cum
+                    tempore!
+                </p>
+                <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquid quasi accusantium
+                    distinctio neque facere ea corporis soluta architecto. Neque architecto in tenetur soluta minima.
+                </p>
+                <button>Read More</button>
+            </div>
+        </div>
+    </div>
+    <div class="conculsion">
+        <div id="con-div1" class="cons">
+            <p>About</p>
+            <div class="empty-div"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nesciunt, quae accusantium laudantium
+                natus sit facere laborum velit placeat nisi, delectus assumenda. Optio beatae nihil nisi nesciunt,
+                commodi maxime eum.
+            </p>
+        </div>
+        <div id="con-div2" class="cons">
+            <p>Most Featured Ads</p>
+            <div class="empty-div"></div>
+            <div class="cons-image">
+                <img src="b1.jpg" alt="" style="width: 126px;">
+                <img src="b2.jpg" alt="">
+            </div>
+            <div class="cons-image">
+                <img src="b3.jpg" alt="">
+                <img src="b4.jpg" alt="">
+            </div>
+        </div>
+        <div id="con-div3" class="cons">
+            <p>Tags</p>
+            <div class="empty-div"></div>
+            <button>Foods</button>
+            <button>Blogs</button>
+            <button>Sale</button><br>
+            <button>Cars</button>
+            <button>Laptops</button>
+            <button>Bikes</button><br>
+            <button>Pets</button>
+            <button>Mobile</button>
+            <button>Fashion</button>
+        </div>
+        <div id="con-div4" class="cons">
+            <p>Quick Links</p>
+            <div class="empty-div" style="margin-bottom: 15px;"></div>
+            <a href="">About Us</a>
+            <a href="">Blogs</a>
+            <a href="">Featured Ads</a>
+            <a href="">Categories</a>
+            <a href="">Get App Link</a>
+            <a href="">Contact Us</a>
+        </div>
+    </div>
     <div class="footer">
-        <div id="box1"></div>
-        <div id="box2">
-            <div id="box3"></div>
+        <div id="container1">
+            <p>Copyright 2017 @ grabmedis All rights reserved</p>
+        </div>
+        <div id="container2">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-solid fa-camera-retro"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-twitch"></i></a>
+            <a href="#"><i class="fa-brands fa-slack"></i></a>
+            <a href="#"><i class="fa-solid fa-book"></i></a>
         </div>
     </div>
 </body>
+
 </html>

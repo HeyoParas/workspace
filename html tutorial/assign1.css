@@ -1,0 +1,55 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+.top
+{
+    height: 60px;
+    background-color: rgb(76, 72, 72);
+    display: flex;
+    color: white;
+}
+#top1,#top2
+{
+    padding: 12px ;
+    margin-left: 150px;
+    margin-right: 20px;
+}
+.social
+{
+    margin-left:45%;
+    padding: 10px;
+    justify-content:space-between;
+}
+.heading
+{
+    height:90px;
+    display: flex;
+    color: black;
+}
+#id1
+{
+    margin-left: 100px;
+    color: orange;
+    font-size: 60px;
+    font-style: italic;
+}
+.search
+{
+    background-color: rgb(76, 72, 72);
+    height: 115px;
+}
+.navbar
+{
+    text-decoration: none;
+    width: 50%;
+    height: 60px;
+    box-sizing: border-box;
+    padding-top:15px;
+    display: flex;
+    justify-content:space-evenly;
+    color: black;
+}

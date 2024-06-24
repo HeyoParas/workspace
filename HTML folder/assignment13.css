@@ -75,18 +75,6 @@ nav a{
     text-align: right;
 
 }
-/* .leftbutton
-{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border:1px solid rgb(191, 184, 184);
-    background: transparent;
-    font-size: large;
-    z-index: 1px;
-    position: absolute;
-    bottom: 30px;
-} */
 .box1,.box2,.box3{
     width: 15%;
     height: 200px;
