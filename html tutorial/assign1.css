@@ -1,55 +1,150 @@
 *{
     padding: 0px;
     margin: 0px;
-    font-size: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
 }
-.top
+.navbar
+{
+    background-color: rgb(68, 66, 66);
+    height: 30px;
+    color: white;
+    display: flex;
+}
+.navbar div{
+    margin-left:40px;
+}
+#space
+{
+    margin-right: 65%;
+}
+.icons
+{
+    display: flex;
+}
+.icons a{
+    text-decoration: none;
+    color: white;
+    margin-right: 5px;
+    padding:8px;
+    border-left: 1px solid white;
+}
+.header
 {
     height: 60px;
-    background-color: rgb(76, 72, 72);
     display: flex;
-    color: white;
+
 }
-#top1,#top2
-{
-    padding: 12px ;
-    margin-left: 150px;
-    margin-right: 20px;
-}
-.social
-{
-    margin-left:45%;
-    padding: 10px;
-    justify-content:space-between;
-}
-.heading
-{
-    height:90px;
-    display: flex;
-    color: black;
-}
-#id1
-{
-    margin-left: 100px;
+.header p{
+    margin-left: 70px;
+    display: block;
     color: orange;
-    font-size: 60px;
+    font-size: 40px;
     font-style: italic;
+    margin-right: 10%;
+}
+.icon{
+    display: flex;
+}
+.header div a{
+    text-decoration: none;
+    color:black;
+    padding-top: 20px;
+    margin-right: 13%;
+    font-size: 22px;
+}.button
+{
+    margin-left: 20%;
+    padding: 10px;
+}
+.button button{
+    color:white;
+    background-color: orange;
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+
 }
 .search
 {
-    background-color: rgb(76, 72, 72);
-    height: 115px;
-}
-.navbar
-{
-    text-decoration: none;
-    width: 50%;
-    height: 60px;
-    box-sizing: border-box;
-    padding-top:15px;
+    background-color: rgb(68, 66, 66);
+    height: 100px;
     display: flex;
-    justify-content:space-evenly;
+    color: white;
+}
+.search div
+{
+    background-color: rgb(255, 255, 255);
+    height: 44px;
+    margin-top: 25px;
+    width: 20%;
     color: black;
+    margin-right: 5px;
+}
+.search select{
+    width: 30%;
+    height: 46px;
+    margin-top: 25px;
+    margin-left: 10%;
+}
+#d2
+{
+    width: 40%;
+}
+#d1
+{
+    margin-left: 20%;   
+}
+.list
+{
+    margin-left: 10%;
+}
+.front
+{
+    color: white;
+    width: 100%;
+    height: 500px;
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url("download.jpg");
+    background-size: cover;
+    background-position: 1px;
+    text-align: center;
+    padding-top: 170px;
+    font-size: 60px;
+}
+.front span{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#span
+{
+    padding: 0px;
+    font-size:15px;
+}
+.ads
+{
+    width: 100%;
+    background-color: rgb(207, 198, 198);
+}
+.ads p{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.template
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(243, 230, 230);
+}
+.template div
+{
+    margin-top: 15px;
+    height: 600px;
+    width: 370px;
+    background-color: white;
+    font-size: 25px;
+}
+.template div img{
+    width:100%;
+    height:300px;
+
 }

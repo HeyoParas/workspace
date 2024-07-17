@@ -3,23 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="test.css">
+    <title>Responsive Navbar</title>
+   <style>
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+}
+
+.brand-title {
+    font-size: 2.5rem;
+    color:red;
+    font-weight: 800;
+    margin-right: 1rem; 
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allows the navbar-links to take available space */
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    margin-left: 10%;
+}
+
+.navbar-links li {
+    padding: 0 1rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color:black;
+    font-size: 1.2rem;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.search-form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #777;
+}
+
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links a{
+        float: left;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+   </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="brand-title">GREENMARKET</div>
 
-    <ul class="list">
-    
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-    <li><a href="https://www.w3schools.com/php/default.asp" target="_top" class="left">HTML HOME</a></li>
-   
-    </ul>
-
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Fruits</a></li>
+                <li><a href="#">Salad</a></li>
+                <li><a href="#">Juice</a></li>
+                <li><a href="#">Meat</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit">Search</button>
+                    </form>
+                
+           
+    </nav>
 </body>
 </html>
