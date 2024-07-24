@@ -19,11 +19,10 @@ btn.addEventListener('click',function()
     }
     inputbox.value="";
 });
-inputbox.addEventListener('keydown', function(event) {
+inputbox.addEventListener('keydown', function(e) {
     //agar user enter key press krega toh add hojega task
-    if (event.key === 'Enter') {
-        event.preventDefault(); 
-        if(inputbox.value==="")
+    if (e.key === 'Enter') {
+        if(inputbox.value==="" )
             {
                 alert("Write a task!!!");
             }
@@ -33,8 +32,21 @@ inputbox.addEventListener('keydown', function(event) {
                 newelement.innerHTML = '<input type="checkbox" id  ="checkbox"></input>' + '   ' +inputbox.value;
                 list.appendChild(newelement);
 
+                //new element create krega jo delete ke kaam ayega
 
-                //agar checkbox check krte hai toh task delete kr dega
+                let deleteIcon = document.createElement('span');
+                deleteIcon.innerHTML = '❌'; 
+                deleteIcon.className = 'delete-icon';
+                newelement.appendChild(deleteIcon);
+
+                //delete element ke upar click hote hi list mein se task remove kr dega
+
+                deleteIcon.addEventListener('click', function() {
+                    list.removeChild(newelement);
+                });
+                
+
+                //agar checkbox check krte hai toh task linethrough kr dega
                 let checkbox = newelement.querySelector('#checkbox');
                 checkbox.addEventListener('change', function() {
                     if (checkbox.checked) {
@@ -47,3 +59,6 @@ inputbox.addEventListener('keydown', function(event) {
             inputbox.value="";
     }
 })
+
+
+

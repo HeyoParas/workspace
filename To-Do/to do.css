@@ -18,7 +18,7 @@ body{
 }
 .todo-container
 {
-    background-color: #ff4b1f;
+    background-color:white;
     border-radius: 20px;
 }
 h1{
@@ -36,10 +36,11 @@ h1{
     font-size: 2rem;
     width: 70%;
     border: none;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 40px;
     height: 5rem;
-    color: white;
+    color: black;
+    border: 0.5px solid black;
 }
 #btn
 {
@@ -66,12 +67,7 @@ h1{
     width: 25px;
     height: 25px;
 }
-/* .list-container p::before{
-   content: '';
-   position: sticky;
-   left: 0px;
-   height: 25px;
-   width: 25px;
-   border-radius: 50%;
-   background-color: rgba(0,0, 0,0.1);
-} */
+.delete-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
