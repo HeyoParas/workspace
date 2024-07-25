@@ -1,7 +1,6 @@
-
-let inputbox =document.querySelector("#input-text-box")
-let list = document.querySelector(".list-container")
-let btn = document.querySelector("#btn");
+var inputbox =document.querySelector("#input-text-box")
+var list = document.querySelector(".list-container")
+var btn = document.querySelector("#btn");
 
 
 btn.addEventListener('click',function()
@@ -13,9 +12,8 @@ btn.addEventListener('click',function()
     }
     else //agar blank ni chodega toh new task add kr dega
     {
-        let newelement = document.createElement('p');
-        newelement.innerHTML = '<input type="checkbox" id  ="checkbox"></input>' + '   ' +inputbox.value;
-        list.appendChild(newelement);
+        fun();
+
     }
     inputbox.value="";
 });
@@ -28,37 +26,46 @@ inputbox.addEventListener('keydown', function(e) {
             }
             else{
                 //new task add krega 
-                let newelement = document.createElement('p');
-                newelement.innerHTML = '<input type="checkbox" id  ="checkbox"></input>' + '   ' +inputbox.value;
-                list.appendChild(newelement);
-
-                //new element create krega jo delete ke kaam ayega
-
-                let deleteIcon = document.createElement('span');
-                deleteIcon.innerHTML = '❌'; 
-                deleteIcon.className = 'delete-icon';
-                newelement.appendChild(deleteIcon);
-
-                //delete element ke upar click hote hi list mein se task remove kr dega
-
-                deleteIcon.addEventListener('click', function() {
-                    list.removeChild(newelement);
-                });
-                
-
-                //agar checkbox check krte hai toh task linethrough kr dega
-                let checkbox = newelement.querySelector('#checkbox');
-                checkbox.addEventListener('change', function() {
-                    if (checkbox.checked) {
-                        newelement.style.textDecoration = "line-through";
-                    } else {
-                        newelement.style.textDecoration = "none";
-                    }
-                });
+                fun();
             }
             inputbox.value="";
     }
 })
+
+function fun()
+{
+    var newelement = document.createElement('div');
+    newelement.setAttribute("class","Todo-content");
+    newelement.innerHTML = '<div><input type="checkbox" id  ="checkbox"></input>'+'<span>'+ inputbox.value +'</span></div>';
+    list.appendChild(newelement);
+    //new element create krega jo delete ke kaam ayega
+
+    deleteIcon = document.createElement('button');
+    deleteIcon.innerHTML = '✖'; 
+    deleteIcon.setAttribute("id","cross-button");
+    newelement.appendChild(deleteIcon);
+
+    
+
+    //delete element ke upar click hote hi list mein se task remove kr dega
+
+    deleteIcon.addEventListener('click', function() {
+        list.removeChild(newelement);
+    });
+    
+
+    //agar checkbox check krte hai toh task linethrough kr dega
+    let checkbox = newelement.querySelector('#checkbox');
+    let span = newelement.querySelector('span');
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            span.style.textDecoration = "line-through";
+            
+        } else {
+            span.style.textDecoration = "none";
+        }
+    });
+}
 
 
 
