@@ -37,7 +37,7 @@ function fun()
     var newelement = document.createElement('div');
     newelement.setAttribute("class","Todo-content");
     newelement.innerHTML = '<div><input type="checkbox" id  ="checkbox"></input>'+'<span>'+ inputbox.value +'</span></div>';
-    list.appendChild(newelement);
+    list.prepend(newelement);
     //new element create krega jo delete ke kaam ayega
 
     deleteIcon = document.createElement('button');
@@ -66,6 +66,4 @@ function fun()
         }
     });
 }
-
-
 

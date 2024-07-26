@@ -29,17 +29,17 @@ h1{
     display: flex;
     justify-content: space-around;
     height: 10%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 #input-text-box
 {
-    padding-left: 1em;
+    padding-left: 1.4em;
     font-size: 2rem;
-    width: 70%;
+    width: 80%;
     border: none;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 40px;
-    height: 4rem;
+    height: 4.4rem;
     color: black;
     border: 0.5px solid black;
 }
@@ -52,6 +52,7 @@ h1{
 #btn
 {
     width: 15%;
+    height: 70px;
     border: none;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -62,8 +63,7 @@ h1{
 }
 .list-container 
 {
-    /* float: left; */
-    padding: 2em;
+    padding: 1em;
 }
 .list-container span{
     font-size:2rem;
@@ -77,7 +77,13 @@ h1{
 #cross-button{
     margin-left: 10px;
     cursor: pointer;
-    font-size: 25px;
+    width: 35px;
+    color: white;
+    background-color: rgb(242, 34, 34);
+    border: none;
+    height: 35px;
+    font-size: 1.5em;
+    border-radius: 50%;
     text-decoration: none ;
 }
 .Todo-content
