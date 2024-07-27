@@ -1,16 +1,18 @@
 var inputbox =document.querySelector("#input-text-box")
 var list = document.querySelector(".list-container")
 var btn = document.querySelector("#btn");
+var arr= [];
+
+var counter=0;
 
 
 btn.addEventListener('click',function()
 {
-    //agar user sirf blank chordke add krega task toh alert dega
     if(inputbox.value==="")
     {
         alert("Write a task!!!");
     }
-    else //agar blank ni chodega toh new task add kr dega
+    else
     {
         fun();
 
@@ -18,43 +20,77 @@ btn.addEventListener('click',function()
     inputbox.value="";
 });
 inputbox.addEventListener('keydown', function(e) {
-    //agar user enter key press krega toh add hojega task
     if (e.key === 'Enter') {
         if(inputbox.value==="" )
             {
                 alert("Write a task!!!");
             }
             else{
-                //new task add krega 
                 fun();
             }
             inputbox.value="";
     }
 })
 
+function createTodo(x,y){
+    let task={
+        todos:x,
+        id:y
+    }
+    return task;
+}
+
 function fun()
 {
     var newelement = document.createElement('div');
     newelement.setAttribute("class","Todo-content");
     newelement.innerHTML = '<div><input type="checkbox" id  ="checkbox"></input>'+'<span>'+ inputbox.value +'</span></div>';
-    list.prepend(newelement);
-    //new element create krega jo delete ke kaam ayega
+    let x =inputbox.value;
+    let y=counter;
+    counter++;
+    let task = createTodo(x,y);
+    arr.push(task);
+     let str = JSON.stringify(arr);
+     localStorage.setItem("todos",str);
+     list.prepend(newelement);
+
+
+
+    DEicon=document.createElement('div');
+    DEicon.setAttribute("id","DE-icon");
+    newelement.appendChild(DEicon);
 
     deleteIcon = document.createElement('button');
-    deleteIcon.innerHTML = '✖'; 
+    deleteIcon.innerHTML = '🗑'; 
     deleteIcon.setAttribute("id","cross-button");
-    newelement.appendChild(deleteIcon);
+    DEicon.appendChild(deleteIcon);
 
     
-
-    //delete element ke upar click hote hi list mein se task remove kr dega
-
     deleteIcon.addEventListener('click', function() {
         list.removeChild(newelement);
     });
+
+
+
+
+    editBtn = document.createElement('button');
+    editBtn.innerHTML = '✎'; 
+    editBtn.setAttribute("id","edit-button");
+    DEicon.appendChild(editBtn);
+
+
+
+
+
+    editBtn.addEventListener('click', function() {
+  
+ 
+    });
     
 
-    //agar checkbox check krte hai toh task linethrough kr dega
+
+
+
     let checkbox = newelement.querySelector('#checkbox');
     let span = newelement.querySelector('span');
     checkbox.addEventListener('change', function() {
@@ -66,4 +102,3 @@ function fun()
         }
     });
 }
-

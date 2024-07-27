@@ -85,6 +85,22 @@ h1{
     font-size: 1.5em;
     border-radius: 50%;
     text-decoration: none ;
+    display: flex;
+}
+#DE-icon
+{
+    display: flex;
+}
+#edit-button
+{
+    margin-left: 10px;
+    cursor: pointer;
+    width: 35px;
+    border: none;
+    height: 35px;
+    font-size: 1.5em;
+    border-radius: 50%;
+    text-decoration: none ;
 }
 .Todo-content
 {
