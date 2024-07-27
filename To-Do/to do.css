@@ -33,7 +33,7 @@ h1{
 }
 #input-text-box
 {
-    padding-left: 1.4em;
+    padding-left: 1em;
     font-size: 2rem;
     width: 80%;
     border: none;
@@ -45,7 +45,6 @@ h1{
 }
 #input-text-box::placeholder
 {
-    padding-left: 20px;
     font-size:1.5rem; 
     color: gray
 }
