@@ -69,7 +69,7 @@ h1{
     padding: 12px 8px 12px 20px;
     text-align: left;
 }
-#checkbox {
+.checkbox {
     width: 25px;
     height: 25px;
 }

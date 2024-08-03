@@ -3,7 +3,6 @@ let btn = document.querySelector("#btn");
 let inputbox = document.querySelector("#input-text-box");
 let todos = document.querySelector(".list-container");
 
-// Load tasks from local storage on page load
 window.addEventListener('load', loadTasksFromLocalStorage);
 
 btn.addEventListener('click', () => {
@@ -28,19 +27,19 @@ inputbox.addEventListener('keydown', function (e) {
 
 function createNewTodo() {
     let todoText = inputbox.value;
-    addTaskToDOM(todoText);
+    addTask(todoText);
     saveTaskToLocalStorage(todoText);
 }
 
-function addTaskToDOM(todoText) {
+function addTask(todoText) {
     var Task = document.createElement('div');
     Task.setAttribute("class", "Todo-content");
     Task.innerHTML = '<div><input type="checkbox" class="checkbox"></input>' + '<span>' + todoText + '</span></div>';
     todos.prepend(Task);
-    addTaskControls(Task, todoText);
+    addIcons(Task, todoText);
 }
 
-function addTaskControls(Task, todoText) {
+function addIcons(Task, todoText) {
     let DEicon = document.createElement('div');
     DEicon.setAttribute("id", "DE-icon");
     Task.appendChild(DEicon);
@@ -88,7 +87,7 @@ function saveTaskToLocalStorage(todoText) {
 function loadTasksFromLocalStorage() {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach(todoText => {
-        addTaskToDOM(todoText);
+        addTask(todoText);
     });
 }
 

@@ -1,0 +1,26 @@
+.lists
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.lists div 
+{
+    width: 33%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.lists button{
+    font-size: 1rem;
+}
+
+#delete
+{
+    color: red;
+    cursor: pointer;
+}
+.total
+{
+    display: flex;
+    justify-content: flex-end;
+}
