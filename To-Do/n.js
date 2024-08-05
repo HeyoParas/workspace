@@ -105,3 +105,6 @@ function updateTaskInLocalStorage(oldTask, newTask) {
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
+
+
+

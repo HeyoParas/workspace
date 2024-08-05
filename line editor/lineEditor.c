@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-void Load_file_to_buffer(FILE *fp);
+void loadFileToBuffer(FILE *fp);
+void saveDataToFile(FILE *fp);
 void insert(int pos);
 void display();
 void delete(int pos);
 void update(int pos);
-void saveDataToFile(FILE *fp);
 
 FILE *fp;
 int flag = 0;
@@ -112,6 +112,10 @@ void update(int pos)
 
 void display()
 {
+    if (head == NULL)
+    {
+        printf("file is empty right now!!\n");
+    }
     ptr = head;
     while (ptr != NULL)
     {
@@ -121,8 +125,7 @@ void display()
     printf("\n");
 }
 
-
-void Load_file_to_buffer(FILE *fp)
+void loadFileToBuffer(FILE *fp)
 {
     char str[100];
     while (fgets(str, sizeof(str), fp) != NULL)
@@ -164,6 +167,7 @@ void menuDriven()
 
     int choice, pos;
     scanf("%d", &choice);
+    printf("\n");
     fflush(stdin);
     switch (choice)
     {
@@ -214,11 +218,11 @@ int main(int argc, char *argv[])
     }
     if (arguement == 2)
     {
-        fp = fopen(argv[1], "r+");
+        fp = fopen(argv[1], "a+");
         if (fp != NULL)
         {
             printf("file open\n");
-            Load_file_to_buffer(fp);
+            loadFileToBuffer(fp);
         }
         if (fp == NULL)
         {
@@ -236,11 +240,14 @@ int main(int argc, char *argv[])
     //     fp = fopen(str, "r+");
     //     if (fp == NULL)
     //     {
-    //         fp = fopen(str, "w+");
+    //         printf("\nthis name file not exists :\n");
+    //         fp = fopen(argv[1], "w+");
+    //         printf("Creating a file and open with same name\n");
     //     }
     //     if (fp != NULL)
     //     {
-    //         Store_file_data_to_buffer(fp);
+    //         printf("file open\n");
+    //         loadFileToBuffer(fp);
     //     }
     // }
     if (arguement > 3)
@@ -270,5 +277,11 @@ int main(int argc, char *argv[])
         saveDataToFile(fp);
         printf("\nAll the data saved into file\n");
     }
+    // if(arguement==3)
+    // {
+    //     fp = fopen(argv[1], "w");
+    //     saveDataToFile(fp);
+    //     printf("\nAll the data saved into file\n");
+    // }
     return 0;
 }

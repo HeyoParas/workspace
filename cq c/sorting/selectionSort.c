@@ -9,18 +9,18 @@ void selection(int arr[],int n)
 {
     for(int i=0;i<n-1;i++)
     {
-        int larg=arr[0];
-        int larg_idx=i;
+        int small=arr[0];
+        int small_idx=i;
 
         for(int j=i+1;j<n;j++)
         {
-            if(arr[j]<arr[larg_idx])
+            if(arr[j]<arr[small_idx])
             {
-                larg=arr[j];
-                larg_idx=j;
+                small=arr[j];
+                small_idx=j;
             }
         }
-         swap(&arr[larg_idx],&arr[i]);
+         swap(&arr[small_idx],&arr[i]);
         
     }
     
@@ -31,8 +31,8 @@ void selection(int arr[],int n)
 }
 int main ()
 {
-    int arr[6]={3,14,17,11,9,1};
-    int n=6;
+    int arr[]={3,14,17,6,7,3,4,9,11,9,1};
+    int n=sizeof(arr)/sizeof(arr[0]);
     selection(arr,n);
     return 0;
 }

@@ -1,4 +1,5 @@
 // chandigarh
+//dnahchragi
 int getlen(char s[])
 {
     int len = 0, i = 0;
@@ -39,7 +40,7 @@ char *second_reverse(char s[], int start, int end)
 int main()
 {
 
-    char str[] = "aaaaaaaaTaaaaaaaa";
+    char str[] = "chandigarh";
     int length = getlen(str);
     int mid = length / 2;
 
