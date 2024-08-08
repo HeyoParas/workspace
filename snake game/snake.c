@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <windows.h>
 
-#define HEIGHT 20
+#define HEIGHT 40
 #define WIDTH 20
 
 int x, y, fruitX, fruitY, score, gameover, flag, level;
@@ -67,12 +67,12 @@ void setup()
 
     do
     {
-        fruitX = rand() % WIDTH;
+    fruitX = rand() % WIDTH;
     } while (fruitX == 0);
 
     do
     {
-        fruitY = rand() % HEIGHT;
+    fruitY = rand() % HEIGHT;
     } while (fruitY == 0);
 
     score = 0;
@@ -146,12 +146,12 @@ int logic(int speed)
     if (score == 10)
     {
         level = 2;
-        speed = 50;
+        speed = 70;
     }
     if (score == 20)
     {
         level = 3;
-        speed = 10;
+        speed = 40;
     }
     if (level == 1 || level == 2)
     {
@@ -208,7 +208,7 @@ sos:
         speed = logic(speed);
         Sleep(speed);
     }
-    printf("\nenter Y for play again:");
+    printf("\n enter Y for play again:");
     scanf("%c", &ch);
     if (ch == 'y')
         goto sos;

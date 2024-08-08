@@ -1,0 +1,52 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+}
+#main-heading
+{
+    background-color: #008080;
+    height: 50px;
+    padding: 10px 0px 0px 0px ;
+    color: white;
+}
+.container
+{
+    display: flex;
+    flex-direction: row;
+}
+.leftpane 
+{
+    width: 50%;
+    height: 100%;
+}
+.rightpane
+{
+    width: 50%;
+    border: 1px solid rgb(56, 54, 54);
+    height: 100%;
+}
+.leftpane-navbar
+{
+    height: 70px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#questionBtn
+{
+    height:40px;
+    width: 30%;
+}
+#searchQuestion
+{
+    height: 40px;
+    width: 40%;
+}

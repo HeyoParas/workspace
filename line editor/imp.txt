@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 
 void loadFileToBuffer(FILE *fp);
 void saveDataToFile(FILE *fp);
@@ -11,7 +12,7 @@ void update(int pos);
 
 FILE *fp;
 int flag = 0;
-
+int noOfLines = 0;
 typedef struct buffer
 {
     char line[100];
@@ -29,60 +30,80 @@ void insert(int pos)
 {
     char str[100];
     int i = 1;
-    printf("Add new line: ");
-    scanf("%[^\n]s", str);
-    buffer *new = (buffer *)malloc(1 * sizeof(buffer));
-    strcpy(new->line, str);
-    new->link = NULL;
-    ptr = head;
-    if (head == NULL)
+    if (pos == (noOfLines + 1) || pos <= noOfLines)
     {
-        head = new;
-        return;
+        printf("Add new line: ");
+        scanf("%[^\n]s", str);
+        buffer *new = (buffer *)malloc(1 * sizeof(buffer));
+        strcpy(new->line, str);
+        strcat(new->line, "\n");
+        new->link = NULL;
+        ptr = head;
+        if (head == NULL)
+        {
+            head = new;
+            return;
+        }
+        if (pos == 1)
+        {
+            new->link = head;
+            head = new;
+            noOfLines++;
+            return;
+        }
+        while (i < pos - 1 && ptr != NULL)
+        {
+            ptr = ptr->link;
+            i++;
+        }
+        new->link = ptr->link;
+        ptr->link = new;
+        noOfLines++;
     }
-    if (pos == 1)
+    else
     {
-        new->link = head;
-        head = new;
-        return;
+        printf("\n<<<<<You enter wrong postion>>>>>\n");
     }
-    while (i < pos - 1 && ptr != NULL)
-    {
-        ptr = ptr->link;
-        i++;
-    }
-    new->link = ptr->link;
-    ptr->link = new;
 }
 
 void delete(int pos)
 {
     ptr = head;
     int i = 1;
-    if (head == NULL)
+    if (pos <= noOfLines)
     {
-        printf("file is empty\n");
-        return;
-    }
+        if (head == NULL)
+        {
+            printf("file is empty\n");
+            return;
+        }
 
-    if (ptr->link == NULL)
-    {
-        head = NULL;
-        return;
-    }
+        if (ptr->link == NULL)
+        {
+            head = NULL;
+            noOfLines--;
+            return;
+        }
 
-    if (pos == 1)
-    {
-        head = head->link;
-        return;
-    }
+        if (pos == 1)
+        {
+            head = head->link;
+            noOfLines--;
+            return;
+        }
 
-    while (i < pos - 1 && ptr != NULL)
-    {
-        ptr = ptr->link;
-        i++;
+        while (i < pos - 1 && ptr != NULL)
+        {
+            ptr = ptr->link;
+            i++;
+        }
+        ptr->link = ptr->link->link;
+        noOfLines--;
     }
-    ptr->link = ptr->link->link;
+    else
+    {
+        printf("\n<<<<<You enter wrong postion>>>>>\n");
+    }
 }
 
 void update(int pos)
@@ -90,59 +111,77 @@ void update(int pos)
     ptr = head;
     int i = 1;
     char newstr[100];
-    printf("Add new changed line: ");
-    scanf("%[^\n]s", newstr);
+    if (pos <= noOfLines)
+    {
+        printf("Add new changed line: ");
+        scanf("%[^\n]s", newstr);
 
-    if (head == NULL)
-    {
-        printf("file is empty\n");
-        return;
-    }
-    while (i < pos && ptr != NULL)
-    {
-        ptr = ptr->link;
-        i++;
-    }
-    strcpy(ptr->line, newstr);
-    if (pos == 1)
-    {
+        if (head == NULL)
+        {
+            printf("file is empty\n");
+            return;
+        }
+        while (i < pos && ptr != NULL)
+        {
+            ptr = ptr->link;
+            i++;
+        }
         strcpy(ptr->line, newstr);
+        strcat(ptr->line, "\n");
+
+        if (pos == 1)
+        {
+            strcpy(ptr->line, newstr);
+            strcat(ptr->line, "\n");
+        }
+    }
+    else
+    {
+        printf("\n<<<<<You enter wrong postion>>>>>\n");
     }
 }
 
 void display()
 {
-    if(head==NULL)
+    if (head == NULL)
     {
         printf("file is empty right now!!\n");
     }
     ptr = head;
     while (ptr != NULL)
     {
-        printf("%s\n", ptr->line);
+        printf("%s", ptr->line);
         ptr = ptr->link;
     }
     printf("\n");
 }
 
-
 void loadFileToBuffer(FILE *fp)
 {
     char str[100];
-    while (fgets(str, sizeof(str), fp) != NULL)
+    if (fp == NULL)
     {
-        buffer *new = (buffer *)malloc(sizeof(buffer));
-        new->link = NULL;
-        strcpy(new->line, str);
-        if (head == NULL)
+        noOfLines = 0;
+    }
+    else
+    {
+        while (fgets(str, sizeof(str), fp) != NULL)
         {
-            head = new;
-            tail = head;
-        }
-        else
-        {
-            tail->link = new;
-            tail = new;
+            buffer *new = (buffer *)malloc(sizeof(buffer));
+            new->link = NULL;
+            strcpy(new->line, str);
+            if (head == NULL)
+            {
+                head = new;
+                tail = head;
+                noOfLines++;
+            }
+            else
+            {
+                tail->link = new;
+                tail = new;
+                noOfLines++;
+            }
         }
     }
 }
@@ -164,7 +203,7 @@ void menuDriven()
     printf("3-update text line\n");
     printf("4-display file content\n");
     printf("0-exit\n");
-    printf("\nenter your choice\n");
+    printf("\nenter your choice : ");
 
     int choice, pos;
     scanf("%d", &choice);
@@ -176,6 +215,7 @@ void menuDriven()
         printf("enter the postion of line : ");
         scanf("%d", &pos);
         fflush(stdin);
+        system("cls");
         insert(pos);
         break;
 
@@ -194,6 +234,7 @@ void menuDriven()
         break;
 
     case 4:
+        system("cls");
         display();
         break;
 
@@ -201,6 +242,10 @@ void menuDriven()
         fclose(fp);
         flag = 1;
         break;
+
+    default:
+        printf("wrong choice\n");
+        return;
     }
 }
 
@@ -238,14 +283,17 @@ int main(int argc, char *argv[])
     //     strcpy(str, argv[2]);
     //     strcat(str, "\\");
     //     strcat(str, argv[1]);
-    //     fp = fopen(str, "r+");
     //     if (fp == NULL)
     //     {
-    //         fp = fopen(str, "w+");
+    //         printf("\nthis name file not exists :\n");
+    //         fp = fopen(argv[1], "w+");
+    //         printf("Creating a file and open with same name\n");
     //     }
     //     if (fp != NULL)
     //     {
-    //         Store_file_data_to_buffer(fp);
+    //         printf("file open\n");
+    //         fp = fopen(str, "r+");
+    //         loadFileToBuffer(fp);
     //     }
     // }
     if (arguement > 3)
@@ -267,6 +315,7 @@ int main(int argc, char *argv[])
         fp = fopen("file.txt", "r+");
         saveDataToFile(fp);
         printf("\nAll the data saved into file\n");
+        fclose(fp);
     }
 
     if (arguement == 2)
@@ -274,6 +323,14 @@ int main(int argc, char *argv[])
         fp = fopen(argv[1], "w");
         saveDataToFile(fp);
         printf("\nAll the data saved into file\n");
+        fclose(fp);
     }
+    // if(arguement==3)
+    // {
+    //     fp = fopen(argv[1], "w");
+    //     saveDataToFile(fp);
+    //     printf("\nAll the data saved into file\n");
+    //     fclose(fp);
+    // }
     return 0;
 }

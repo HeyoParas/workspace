@@ -1,104 +1,109 @@
-var inputbox =document.querySelector("#input-text-box")
-var list = document.querySelector(".list-container")
-var btn = document.querySelector("#btn");
-var arr= [];
 
-var counter=0;
+let btn = document.querySelector("#btn");
+let inputbox = document.querySelector("#input-text-box");
+let todos = document.querySelector(".list-container");
 
+window.addEventListener('load', loadTasksFromLocalStorage);
 
-btn.addEventListener('click',function()
-{
-    if(inputbox.value==="")
-    {
-        alert("Write a task!!!");
+btn.addEventListener('click', () => {
+    if (inputbox.value === "") {
+        alert("Enter the task");
+    } else {
+        createNewTodo();
     }
-    else
-    {
-        fun();
+    inputbox.value = "";
+})
 
-    }
-    inputbox.value="";
-});
-inputbox.addEventListener('keydown', function(e) {
+
+inputbox.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
-        if(inputbox.value==="" )
-            {
-                alert("Write a task!!!");
-            }
-            else{
-                fun();
-            }
-            inputbox.value="";
+        if (inputbox.value === "") {
+            alert("Write a task!!!");
+        } else {
+            createNewTodo();
+        }
+        inputbox.value = "";
     }
 })
 
-function createTodo(x,y){
-    let task={
-        todos:x,
-        id:y
-    }
-    return task;
+function createNewTodo() {
+    let todoText = inputbox.value;
+    addTask(todoText);
+    saveTaskToLocalStorage(todoText);
 }
 
-function fun()
-{
-    var newelement = document.createElement('div');
-    newelement.setAttribute("class","Todo-content");
-    newelement.innerHTML = '<div><input type="checkbox" id  ="checkbox"></input>'+'<span>'+ inputbox.value +'</span></div>';
-    let x =inputbox.value;
-    let y=counter;
-    counter++;
-    let task = createTodo(x,y);
-    arr.push(task);
-     let str = JSON.stringify(arr);
-     localStorage.setItem("todos",str);
-     list.prepend(newelement);
+function addTask(todoText) {
+    var Task = document.createElement('div');
+    Task.setAttribute("class", "Todo-content");
+    Task.innerHTML = '<div><input type="checkbox" class="checkbox"></input>' + '<span>' + todoText + '</span></div>';
+    todos.prepend(Task);
+    addIcons(Task, todoText);
+}
 
+function addIcons(Task, todoText) {
+    let DEicon = document.createElement('div');
+    DEicon.setAttribute("id", "DE-icon");
+    Task.appendChild(DEicon);
 
-
-    DEicon=document.createElement('div');
-    DEicon.setAttribute("id","DE-icon");
-    newelement.appendChild(DEicon);
-
-    deleteIcon = document.createElement('button');
-    deleteIcon.innerHTML = '🗑'; 
-    deleteIcon.setAttribute("id","cross-button");
+    let deleteIcon = document.createElement('button');
+    deleteIcon.innerHTML = '🗑';
+    deleteIcon.setAttribute("id", "cross-button");
     DEicon.appendChild(deleteIcon);
 
-    
-    deleteIcon.addEventListener('click', function() {
-        list.removeChild(newelement);
+    deleteIcon.addEventListener('click', function () {
+        todos.removeChild(Task);
+        removeTaskFromLocalStorage(todoText);
     });
 
-
-
-
-    editBtn = document.createElement('button');
-    editBtn.innerHTML = '✎'; 
-    editBtn.setAttribute("id","edit-button");
+    let editBtn = document.createElement('button');
+    editBtn.innerHTML = '✎';
+    editBtn.setAttribute("id", "edit-button");
     DEicon.appendChild(editBtn);
 
-
-
-
-
-    editBtn.addEventListener('click', function() {
-  
- 
+    editBtn.addEventListener('click', function () {
+        let editedTask = prompt("Edit your task", todoText);
+        if (editedTask !== null && editedTask !== '') {
+            Task.querySelector('span').textContent = editedTask;
+            updateTaskInLocalStorage(todoText, editedTask);
+        }
     });
-    
 
-
-
-
-    let checkbox = newelement.querySelector('#checkbox');
-    let span = newelement.querySelector('span');
-    checkbox.addEventListener('change', function() {
+    let checkbox = Task.querySelector('.checkbox');
+    let span = Task.querySelector('span');
+    checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             span.style.textDecoration = "line-through";
-            
         } else {
             span.style.textDecoration = "none";
         }
     });
 }
+
+function saveTaskToLocalStorage(todoText) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push(todoText);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasksFromLocalStorage() {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.forEach(function (todoText)  {
+        addTask(todoText);
+    });
+}
+
+function removeTaskFromLocalStorage(todoText) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks = tasks.filter(task => task !== todoText);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function updateTaskInLocalStorage(oldTask, newTask) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    let taskIndex = tasks.indexOf(oldTask);
+    if (taskIndex !== -1) {
+        tasks[taskIndex] = newTask;
+    }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+

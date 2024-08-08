@@ -1,7 +1,0 @@
-line 2
-3
-hello
-wassup  gang
-
-
-hello
