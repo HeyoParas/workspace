@@ -17,6 +17,11 @@ resetBtn.addEventListener("click", () => {
 });
 
 lapBtn.addEventListener("click", () => {
+  if(sec===0 && hour===0 && min===0)
+  {
+    alert("Firstly start the Stopwatch!!!");
+  }
+  else{
   let seconds = sec;
   let minutes = min;
   let hours = hour;
@@ -37,6 +42,7 @@ lapBtn.addEventListener("click", () => {
   div.setAttribute("class", "laps");
   div.innerHTML = `<span class='lap-list'>Lap ${countLap++}</span><span class='lap-list'>${hours}:${minutes}:${seconds}</span>`;
   addLap.appendChild(div);
+}
 });
 
 startBtn.addEventListener("click", () => {
@@ -52,14 +58,17 @@ stopBtn.addEventListener("click", () => {
   stopBtn.style.display = "none";
   startBtn.style.display = "block";
   startBtn.textContent = "Resume";
+  startBtn.style.backgroundColor="green";
+  startBtn.style.color="white";
   flag = false;
   startWatch(flag);
 });
 
 function startWatch(flag) {
   console.log(flag);
-  if (flag) timerInterval = setInterval(timer, 1000);
-  else {
+  if (flag) {
+    timerInterval = setInterval(timer, 1000);
+  } else {
     clearInterval(timerInterval);
   }
 }
