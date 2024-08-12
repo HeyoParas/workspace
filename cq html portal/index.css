@@ -1,0 +1,20 @@
+.container
+{
+    width: 100%;
+    display: flex;
+    background-color: chartreuse;
+    height: 100%;
+}
+.left
+{
+    width: 50%;
+    height: 50%;
+    background-color: blueviolet;
+}
+.right
+{
+    width: 50%;
+    
+    height: 50%;
+    background-color: aqua;
+}

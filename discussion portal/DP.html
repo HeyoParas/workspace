@@ -9,15 +9,76 @@
   <body>
     <h1 id="main-heading">Discussion Portal</h1>
     <div class="container">
-        <div class="leftpane">
-            <div class="leftpane-navbar">
-            <button id="questionBtn">New Question form</button> <input id="searchQuestion" type="search" placeholder="search Question">
-            </div>
+      <div class="left-pane">
+        <div class="left-pane-navbar">
+          <button id="new-question-form-button">New Question Form</button>
+          <input
+            id="search-question"
+            type="text"
+            placeholder="Search Question..."
+          />
         </div>
-        <div class="rightpane">
-            <h1>Welcome to Discussion Portal!</h1>
-            <p>Enter a subject and question to get started</p>
+        <div id="question-bank">
+          <!-- <div class="question">
+          <div></div>
+          <div></div>
+        </div> -->
         </div>
+      </div>
+
+      <div class="right-pane">
+        <div class="right-container1">
+          <h1 id="heading">Welcome to Discussion Portal !</h1>
+          <br />
+          <p style="font-size: 20px">
+            Enter a subject and question to get started
+          </p>
+          <br /><br /><br />
+          <input id="enter-subject" type="text" placeholder="Subject..." />
+          <br /><br /><br />
+          <textarea
+            name="questions"
+            id="question-area"
+            placeholder="Question"
+            rows="15"
+            cols="70"
+          ></textarea>
+          <br /><br />
+          <button id="question-submit-button">Submit</button>
+        </div>
+
+        <div class="right-container2">
+          <h2 id="heading1">Question</h2>
+          <div id="display-question">
+            <!-- . -->
+          </div>
+          <br />
+          <button id="resolve-button">Resolve</button>
+          <br /><br /><br />
+          <h3 id="h3heading">Response</h3>
+          <br />
+          <div class="people-response">
+            <!-- .  -->
+          </div>
+          <br /><br />
+          <h2 id="h2heading">Add Response</h2>
+          <br />
+          <input
+            type="text"
+            id="responser-name"
+            placeholder="Enter Name"
+          /><br /><br />
+          <textarea
+            name="comment"
+            id="responser-comment"
+            placeholder="Add comment"
+            rows="15"
+            cols="70"
+          ></textarea
+          ><br /><br />
+          <button id="response-button">Submit Response</button>
+        </div>
+      </div>
     </div>
     <script src="DP.js"></script>
   </body>
