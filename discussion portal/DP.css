@@ -11,7 +11,7 @@
     height: 10vh;
     padding: 20px 0px 0px 0px ;
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 20px;
 }
 .container
@@ -108,6 +108,7 @@
     color :white;
 }
 
+
 .classList
 {
     display: flex; 
@@ -169,6 +170,7 @@
 {
     background-color: rgb(194, 187, 187);
     border-radius: 5px;
+    border: 1px solid black;
 }
 .people-response
 {

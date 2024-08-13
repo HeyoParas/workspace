@@ -1,3 +1,7 @@
+let arr=[];
+let queCopy;
+window.addEventListener('load', loadQuestionFromLocalStorage);
+
 let newQuestionBtn = document.querySelector("#new-question-form-button");
 
 let questionInputBox = document.querySelector("#search-question");
@@ -19,6 +23,9 @@ let responserComment = document.querySelector("#responser-comment");
 let responseBtn = document.querySelector("#response-button");
 
 let responseBank = document.querySelector(".people-response");
+
+
+
 
 newQuestionBtn.addEventListener("click", () => {
   Page1.style.display = "block";
@@ -43,25 +50,51 @@ function addResponse(name, comment) {
 }
 
 submitQuestionBtn.addEventListener("click", () => {
-  if (subjectInputBox.value == "" || questionText.value == "") {
+  if (subjectInputBox.value == "" || questionText.value =="") {
     alert("Enter subject and Question !!");
   } else {
-    addQuestions(subjectInputBox.value, questionText.value);
+      
+      let obj={
+          sub:subjectInputBox.value,
+          que:questionText.value,
+          id:Date.now()
+        }
+        
+        addQuestions(subjectInputBox.value, questionText.value);
+    saveQuestionToLocalStorage(obj,arr)
     subjectInputBox.value = "";
     questionText.value = "";
   }
 });
 
 function addQuestions(subject, question) {
+  const now = new Date();
   var questionList = document.createElement("div");
-  questionList.innerHTML = `<h1 id='mainHeading'>${subject}</h1><div class='classList'><div>${question}</div><div></div></div>`;
+  questionList.innerHTML = `<h1 id='mainHeading'>${subject}</h1><div class='classList'><div>${question}</div><div></div>${now}</div>`;
   questionBank.prepend(questionList);
 }
 
 questionBank.addEventListener("click", (event) => {
-  let target = event.target.parentNode;
+ queCopy = event.target.parentNode;
+  displayQuestion.appendChild(queCopy);
+  console.log(queCopy);
   Page1.style.display = "none";
   Page2.style.display = "block";
-  questionBank.appendChild(questionList);
-  console.log("hello");
 });
+
+
+
+function saveQuestionToLocalStorage(obj,arr) {
+
+  console.log(arr)
+  console.log(obj)
+    arr.push(obj);
+    localStorage.setItem('questions', JSON.stringify(arr));
+}
+
+function loadQuestionFromLocalStorage() {
+    arr = JSON.parse(localStorage.getItem('questions')) || [];
+    arr.forEach(function ({sub,que})  {
+        addQuestions(sub,que);
+    });
+}
