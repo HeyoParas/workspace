@@ -1,7 +1,8 @@
 let arr = [];
 let obj = {};
-let responseobj = {};
+let responseobj={};
 let currentQuestionId = 0;
+let totalResponseCount = 0;
 winLoad();
 function winLoad() {
   window.addEventListener("load", loadQuestionFromLocalStorage);
@@ -33,6 +34,8 @@ newQuestionBtn.addEventListener("click", () => {
   Page2.style.display = "none";
 });
 
+
+
 submitQuestionBtn.addEventListener("click", () => {
   if (subjectInputBox.value == "" || questionText.value == "") {
     alert("Enter subject and Question !!");
@@ -41,47 +44,50 @@ submitQuestionBtn.addEventListener("click", () => {
       sub: subjectInputBox.value,
       que: questionText.value,
       id: Date.now(),
-      response: [],
+      totalResponses : 0,
+      response:[]
     };
-
-    addQuestions(subjectInputBox.value, questionText.value, obj.id);
-    arr.push(obj);
-    saveQuestionToLocalStorage();
+    arr.push(obj); // adding new question to array 
+    updateLocalStorage(); // update local storage
+    addQuestions(subjectInputBox.value, questionText.value, obj.id); 
     subjectInputBox.value = "";
     questionText.value = "";
   }
 });
+
 
 responseBtn.addEventListener("click", () => {
   if (responserName.value == "" || responserComment.value == "") {
     alert("Enter Name and Comment !!");
   } else {
     addResponse(responserName.value, responserComment.value);
+    addResponseToLocalStorage(responserName.value, responserComment.value);
+    responserName.value = "";
+    responserComment.value = "";
   }
 });
 
+
 function addResponse(name, comment) {
   let responseList = document.createElement("div");
-  responseList.setAttribute("class", "response-list");
+  arr.currentQuestionId.totalResponses++; // updating total number of responses for particular question
+  responseList.setAttribute
+  ("class", "response-list");
   responseList.innerHTML = `<h3>${name}</h3><p>${comment}</p><hr>`;
   responseBank.prepend(responseList);
-  responserName.value = "";
-  responserComment.value = "";
-  responseobj = {
-    name: name,
-    comment: comment,
-  };
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].id == currentQuestionId) {
-      arr[i].response.push(responseobj);
-      break;
-    }
+  responseobj={
+    name:name,
+    comment:comment
   }
-  console.log(arr);
-  saveQuestionToLocalStorage();
+  let newArr = arr.filter(obj => obj.id == currentQuestionId);
+  
+  // obj.response.push(responseobj);
+  newArr[0].response.push(responseobj);
+  updateLocalStorage();
 }
 
-function addQuestions(subject, question, id, response) {
+
+function addQuestions(subject, question, id) {
   const now = new Date();
   var questionList = document.createElement("div");
   questionList.setAttribute("class", "ques-list");
@@ -95,23 +101,10 @@ function addQuestions(subject, question, id, response) {
 }
 
 questionBank.addEventListener("click", (event) => {
-  responseBank.innerHTML = "";
+  currentQuestionId = event.target.parentNode.getAttribute('id'); // getting the id of the Acitve question
   displayQuestion.innerHTML = "";
-  let queCopy = event.target.closest(".ques-list");
-  console.log(queCopy);
-  currentQuestionId = queCopy.id;
-
-  console.log(currentQuestionId);
-  for (let i = 0; i < arr.length; i++) {
-    if (currentQuestionId == arr[i].id) {
-      console.log(arr[i].response);
-      let response = arr[i].response;
-      loadResponseFromLocalStorage(response);
-      break;
-    }
-  }
+  let queCopy = event.target.closest('.ques-list');
   if (queCopy.id) {
-    currentQuestionId = queCopy.id;
     let temp = queCopy.cloneNode(true);
     displayQuestion.appendChild(temp);
     Page1.style.display = "none";
@@ -119,7 +112,10 @@ questionBank.addEventListener("click", (event) => {
   }
 });
 
-function saveQuestionToLocalStorage() {
+
+
+
+function updateLocalStorage() {
   localStorage.setItem("questions", JSON.stringify(arr));
 }
 
@@ -130,38 +126,16 @@ function loadQuestionFromLocalStorage() {
   });
 }
 
-function loadResponseFromLocalStorage(response) {
-  console.log("here", response);
-  for (let i = 0; i < response.length; i++) {
-    let name = response[i].name;
-    console.log(name);
-    let comment = response[i].comment;
-    console.log(comment);
-    loadResponse(name, comment);
-  }
-
-  console.log("check ", response);
-}
-
-function loadResponse(name, comment) {
-  let responseList = document.createElement("div");
-  responseList.setAttribute("class", "response-list");
-  responseList.innerHTML = `<h3>${name}</h3><p>${comment}</p><hr>`;
-  responseBank.prepend(responseList);
-}
-
 resolveBtn.addEventListener("click", () => {
   if (currentQuestionId) {
     document.getElementById(currentQuestionId).remove();
-    displayQuestion.innerHTML = "";
+    displayQuestion.innerHTML = ""; 
 
-    arr = arr.filter(
-      (question) => question.id.toString() !== currentQuestionId
-    );
+    arr = arr.filter((question) => question.id.toString() !== currentQuestionId);
     localStorage.setItem("questions", JSON.stringify(arr));
 
     Page1.style.display = "block";
     Page2.style.display = "none";
-    currentQuestionId = 0;
+    currentQuestionId = 0; 
   }
 });

@@ -11,8 +11,9 @@
     height: 10vh;
     padding: 20px 0px 0px 0px ;
     color: white;
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     padding: 20px;
+    letter-spacing: 1.5px;
 }
 .container
 {
@@ -108,7 +109,14 @@
     color :white;
 }
 
-
+#mainHeading
+{
+    padding: 10px;
+}
+#q{
+    font-size: 1.5rem;
+    padding: 0 0 0 10px;
+}
 .classList
 {
     display: flex; 
@@ -165,16 +173,21 @@
     border: none;
     border-radius: 5px;
     padding: 20px;
+
+}
+.ques-list
+{
+    padding: 1px;
 }
 #display-question
 {
-    background-color: rgb(194, 187, 187);
+    background-color: rgb(203, 203, 203);
     border-radius: 5px;
     border: 1px solid black;
 }
 .people-response
 {
-    background-color: rgb(194, 187, 187);
+    background-color: rgb(203, 203, 203);
     border-radius: 5px;
     border: 1px solid black;
 }
