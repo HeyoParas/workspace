@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="/to do.css" />
+</head>
+<body>
+    <div class="outer-container">
+        <div class="todo-container">
+            <h1>TO-DO LIST📃</h1>
+            <div class="input-box">
+                <input type="text" id="input-text-box" placeholder="Enter your task..." />
+                <button id="btn">ADD</button>
+            </div>
+            <div class="list-container">
+                <% tasks.forEach(task => { %>
+                    <div class="Todo-content">
+                        <div>
+                            <input type="checkbox" class="checkbox">
+                            <span><%= task %></span>
+                        </div>
+                        <div id="DE-icon">
+                            <button id="cross-button">🗑</button>
+                            <button id="edit-button">✎</button>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    <script src="/to do.js"></script>
+</body>
+</html>

@@ -67,12 +67,12 @@ void setup()
 
     do
     {
-    fruitX = rand() % WIDTH;
+        fruitX = rand() % WIDTH;
     } while (fruitX == 0);
 
     do
     {
-    fruitY = rand() % HEIGHT;
+        fruitY = rand() % HEIGHT;
     } while (fruitY == 0);
 
     score = 0;
@@ -87,16 +87,16 @@ void input()
         switch (getch())
         {
         case 'a':
-            flag= 1;
+            flag = 1;
             break;
         case 's':
-            flag= 2;
+            flag = 2;
             break;
         case 'w':
-            flag= 3;
+            flag = 3;
             break;
         case 'd':
-            flag= 4;
+            flag = 4;
             break;
         case 'p':
             gameover = 1;
@@ -170,11 +170,11 @@ int logic(int speed)
     }
     if (level == 3)
     {
-            for(int i=1;i<countTail;i++)
-            {
-                if(x==tailX[i] && y==tailY[i])
-                gameover=1;
-            }   
+        for (int i = 1; i < countTail; i++)
+        {
+            if (x == tailX[i] && y == tailY[i])
+                gameover = 1;
+        }
     }
     if (x == fruitX && y == fruitY)
     {

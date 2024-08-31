@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.compiler-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.language-selection {
+    margin-bottom: 20px;
+}
+
+.language-selection label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#language {
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 1rem;
+}
+
+.code-editor {
+    margin-bottom: 20px;
+}
+
+#codeArea {
+    width: 95%;
+    height: 300px;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#runButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#runButton:hover {
+    background-color: #0659b3;
+}
+
+.output-section {
+    background-color: black;
+    padding: 20px ;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#output {
+    font-family: monospace;
+    font-size: 16px;
+    color: #333;
+    white-space: pre-wrap;
+}

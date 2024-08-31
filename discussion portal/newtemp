@@ -1,8 +1,8 @@
 let arr = [];
 let obj = {};
-let responseobj={};
+let responseobj = {};
+
 let currentQuestionId = 0;
-let totalResponseCount = 0;
 winLoad();
 function winLoad() {
   window.addEventListener("load", loadQuestionFromLocalStorage);
@@ -15,26 +15,19 @@ let questionText = document.querySelector("#question-area");
 let submitQuestionBtn = document.querySelector("#question-submit-button");
 let questionBank = document.querySelector("#question-bank");
 let rightContainer = document.querySelector(".right-container1");
-
 let displayQuestion = document.querySelector("#display-question");
-
 let Page1 = document.querySelector(".right-container1");
 let Page2 = document.querySelector(".right-container2");
-
 let responserName = document.querySelector("#responser-name");
 let responserComment = document.querySelector("#responser-comment");
 let responseBtn = document.querySelector("#response-button");
-
 let responseBank = document.querySelector(".people-response");
-
 let resolveBtn = document.querySelector("#resolve-button");
 
 newQuestionBtn.addEventListener("click", () => {
   Page1.style.display = "block";
   Page2.style.display = "none";
 });
-
-
 
 submitQuestionBtn.addEventListener("click", () => {
   if (subjectInputBox.value == "" || questionText.value == "") {
@@ -44,67 +37,92 @@ submitQuestionBtn.addEventListener("click", () => {
       sub: subjectInputBox.value,
       que: questionText.value,
       id: Date.now(),
-      totalResponses : 0,
-      response:[]
+      response: [],
     };
-    arr.push(obj); // adding new question to array 
-    updateLocalStorage(); // update local storage
-    addQuestions(subjectInputBox.value, questionText.value, obj.id); 
+
+    addQuestions(subjectInputBox.value, questionText.value, obj.id);
+    arr.push(obj);
+    saveQuestionToLocalStorage();
     subjectInputBox.value = "";
     questionText.value = "";
   }
 });
-
 
 responseBtn.addEventListener("click", () => {
   if (responserName.value == "" || responserComment.value == "") {
     alert("Enter Name and Comment !!");
   } else {
     addResponse(responserName.value, responserComment.value);
-    addResponseToLocalStorage(responserName.value, responserComment.value);
-    responserName.value = "";
-    responserComment.value = "";
   }
 });
 
-
 function addResponse(name, comment) {
   let responseList = document.createElement("div");
-  arr.currentQuestionId.totalResponses++; // updating total number of responses for particular question
-  responseList.setAttribute
-  ("class", "response-list");
-  responseList.innerHTML = `<h3>${name}</h3><p>${comment}</p><hr>`;
+  responseList.setAttribute("class", "response-list");
+  responseList.innerHTML = `<h3>${name}</h3><p>${comment}</p><span id="like">👍</span> <span id="dislike">👎</span><hr>`;
   responseBank.prepend(responseList);
-  responseobj={
-    name:name,
-    comment:comment
+  responserName.value = "";
+  responserComment.value = "";
+  responseobj = {
+    name: name,
+    comment: comment,
+  };
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].id == currentQuestionId) {
+      arr[i].response.push(responseobj);
+      break;
+    }
   }
-  let newArr = arr.filter(obj => obj.id == currentQuestionId);
-  
-  // obj.response.push(responseobj);
-  newArr[0].response.push(responseobj);
-  updateLocalStorage();
+  // console.log(arr);
+  saveQuestionToLocalStorage();
 }
 
-
 function addQuestions(subject, question, id) {
-  const now = new Date();
+  const timeAgo = getTimeAgo(id);
   var questionList = document.createElement("div");
   questionList.setAttribute("class", "ques-list");
   questionList.setAttribute("id", id.toString());
   questionList.innerHTML = `<h1 class='mainHeading'>${subject}</h1>
   <div class='classList'>
   <div id='q'>${question}</div>
-  <div>${now}</div>
+  <div>${timeAgo}</div>
   </div>`;
   questionBank.prepend(questionList);
 }
 
+function getTimeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+
+  if (seconds < 60) {
+    return seconds + " seconds ago";
+  } else if (seconds < 3600) {
+    return Math.floor(seconds / 60) + " minutes ago";
+  } else if (seconds < 86400) {
+    return Math.floor(seconds / 3600) + " hours ago";
+  } else {
+    return Math.floor(seconds / 86400) + " days ago";
+  }
+}
+
+
 questionBank.addEventListener("click", (event) => {
-  currentQuestionId = event.target.parentNode.getAttribute('id'); // getting the id of the Acitve question
+  responseBank.innerHTML = "";
   displayQuestion.innerHTML = "";
-  let queCopy = event.target.closest('.ques-list');
+  let queCopy = event.target.closest(".ques-list");
+  // console.log(queCopy);
+  currentQuestionId = queCopy.id;
+  // console.log(currentQuestionId);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (currentQuestionId == arr[i].id) {
+      // console.log(arr[i].response);
+      let response = arr[i].response;
+      loadResponseFromLocalStorage(response);
+      break;
+    }
+  }
   if (queCopy.id) {
+    // currentQuestionId = queCopy.id;
     let temp = queCopy.cloneNode(true);
     displayQuestion.appendChild(temp);
     Page1.style.display = "none";
@@ -112,10 +130,7 @@ questionBank.addEventListener("click", (event) => {
   }
 });
 
-
-
-
-function updateLocalStorage() {
+function saveQuestionToLocalStorage() {
   localStorage.setItem("questions", JSON.stringify(arr));
 }
 
@@ -126,16 +141,52 @@ function loadQuestionFromLocalStorage() {
   });
 }
 
+function loadResponseFromLocalStorage(response) {
+  // console.log("here :", response);
+  for (let i = 0; i < response.length; i++) {
+    let name = response[i].name;
+    // console.log(name);
+    let comment = response[i].comment;
+    // console.log(comment);
+    loadResponse(name, comment);
+  }
+
+  // console.log("check ", response);
+}
+
+function loadResponse(name, comment) {
+  let responseList = document.createElement("div");
+  responseList.setAttribute("class", "response-list");
+  responseList.innerHTML = `<h3>${name}</h3><p>${comment}</p><hr>`;
+  responseBank.prepend(responseList);
+}
+
 resolveBtn.addEventListener("click", () => {
   if (currentQuestionId) {
     document.getElementById(currentQuestionId).remove();
-    displayQuestion.innerHTML = ""; 
+    displayQuestion.innerHTML = "";
 
-    arr = arr.filter((question) => question.id.toString() !== currentQuestionId);
+    arr = arr.filter(
+      (question) => question.id.toString() !== currentQuestionId
+    );
     localStorage.setItem("questions", JSON.stringify(arr));
 
     Page1.style.display = "block";
     Page2.style.display = "none";
-    currentQuestionId = 0; 
+    currentQuestionId = 0;
   }
 });
+
+// arr = [
+//   {
+//     key: 1,
+//     key2: 2,
+//     key3: 3,
+//     response: [
+//       {
+//         ky1: 1,
+//         ky2: 2,
+//       },
+//     ],
+//   },
+// ];

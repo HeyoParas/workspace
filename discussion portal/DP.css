@@ -127,10 +127,10 @@
 {
     display: none;
 }
-.right-container1
+/* .right-container1
 {
-    /* display: none; */
-}
+    display: none;
+} */
 .people-response
 {
     height:150px;
@@ -194,3 +194,6 @@
 .response-list{
     border-radius: 3px;
 }
+.like-btn, .dislike-btn {
+    cursor: pointer;
+  }

@@ -1,3 +1,0 @@
-hi this is the text in hello .text
-
-

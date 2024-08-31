@@ -1,4 +1,3 @@
-
 let btn = document.querySelector("#btn");
 let inputbox = document.querySelector("#input-text-box");
 let todos = document.querySelector(".list-container");
@@ -62,7 +61,7 @@ function addIcons(Task, todoText) {
 
     editBtn.addEventListener('click', function () {
         let editedTask = prompt("Edit your task", todoText);
-        if (editedTask !== null && editedTask !== '') {
+        if (editedTask !== '') {
             Task.querySelector('span').textContent = editedTask;
             updateTaskInLocalStorage(todoText, editedTask);
         }

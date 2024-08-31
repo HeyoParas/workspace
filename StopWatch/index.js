@@ -12,9 +12,6 @@ let hour = 0;
 let timerInterval;
 let countLap = 1;
 
-resetBtn.addEventListener("click", () => {
-  window.location.reload();
-});
 
 lapBtn.addEventListener("click", () => {
   if(sec===0 && hour===0 && min===0)
@@ -22,22 +19,22 @@ lapBtn.addEventListener("click", () => {
     alert("Firstly start the Stopwatch!!!");
   }
   else{
-  let seconds = sec;
-  let minutes = min;
-  let hours = hour;
-
-  if (sec < 10) {
-    seconds = sec;
-  }
-
-  if (min < 10) {
-    minutes = min;
-  }
-
-  if (hour < 10) {
-    hours = hour;
-  }
-
+    let seconds = sec;
+    let minutes = min;
+    let hours = hour;
+    
+  //   if (sec < 10) {
+  //     seconds = sec;
+  //   }
+    
+  //   if (min < 10) {
+  //     minutes = min;
+  // }
+  
+  // if (hour < 10) {
+  //   hours = hour;
+  // }
+  
   let div = document.createElement("div");
   div.setAttribute("class", "laps");
   div.innerHTML = `<span class='lap-list'>Lap ${countLap++}</span><span class='lap-list'>${hours}:${minutes}:${seconds}</span>`;
@@ -50,7 +47,7 @@ startBtn.addEventListener("click", () => {
   stopBtn.style.display = "block";
   stopBtn.style.backgroundColor = "red";
   stopBtn.style.color = "white";
-
+  
   flag = true;
   startWatch(flag);
 });
@@ -86,18 +83,21 @@ function timer() {
     hour++;
     min = 0;
   }
-
+  
   if (sec < 10) {
     sec = "0" + sec;
   }
-
+  
   if (min < 10) {
     min = "0" + min;
   }
-
+  
   if (hour < 10) {
     hour = "0" + hour;
   }
-
+  
   displaytime.innerText = hour + ":" + min + ":" + sec;
 }
+resetBtn.addEventListener("click", () => {
+  window.location.reload();
+});
