@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <div class="outer-container">
+      <div class="todo-container">
+        <h1>TO-DO LIST📃</h1>
+        <div class="input-box">
+          <input type="text" id="input-text-box" placeholder="Enter your task..." /><button id="btn" >ADD</button>
+        </div>
+        <div class="list-container">
+          <%tasks.forEach(obj=>{%>
+            <div class="Todo-content" id= <%=obj.id%>>
+              <div>
+                <input type="checkbox" <% if(obj.isCompleted){%> checked <%}%> onclick="checkmark(this)" class="checkbox "  ></input>
+                <span class="taskBox" class=<%= obj.isCompleted ==true ? 'completed' : '' %> ><%=obj.task%></span>
+              </div>
+              <div class="DE-icon">
+                <button class="cross-button" onclick="deleteTodo(this)">🗑</button>
+                <button class="edit-button" onclick="editTodo(this)">✎</button>
+              </div>
+            </div>
+          <%})%>
+        </div>
+      </div>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
