@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="login-form">
+        <% if (typeof message !== 'undefined') { %>
+            <h2><%= message %></h2> <% } %>
+        <h2>Login</h2>
+        <form action="/welcome" method="post">
+            <label for="userName">UserName</label>
+            <input type="text" name="username" id="username" placeholder="Username" required>
+            <% if (typeof message1 !== 'undefined') { %>
+                <p style="color: red; margin: 0px 0px 2px 0px"><%= message1 %></p> <% } %>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <% if (typeof message2 !== 'undefined') { %>
+                <p style="color: red; margin:  0px 0px 2px 0px"><%= message2 %></p> <% } %>
+            <button type="submit">Login</button>
+        </form>
+        <div class="check">Does not sign up?<a href="/">Sign In</a></div>
+    </div>
+</body>
+</html>

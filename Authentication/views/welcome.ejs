@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome page</title>
+    <style>
+      .buttons {
+        text-align: center;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px;
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <center><h1>Welcome <%=name%>!</h1></center>
+    <center><a href="/signUp"><button>Create New Account</button></a></center>
+    <br/>
+    <center><a href="/login"><button>Log Out</button></a></center>
+  </body>
+</html>
