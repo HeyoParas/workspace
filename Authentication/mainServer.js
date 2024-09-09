@@ -88,7 +88,7 @@ app.post("/welcome", (req, res) => {
         signupUser[i].password == password
       ) {
         console.log("login successfully");
-        res.cookie("sessionId",sessionId);
+        res.cookie("sessionId",sessionId,{ maxAge: 900000, httpOnly: true });
         return res.render("welcome", { name: username });
       }
     }
